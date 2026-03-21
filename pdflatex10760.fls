@@ -1,0 +1,5 @@
+PWD C:/Users/matic/Faks/MAG/2025_magistrska
+INPUT c:/texlive/2024/texmf.cnf
+INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT Priimek-Vpisna-Leto.tex

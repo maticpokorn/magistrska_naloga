@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Iteracija},
+    ylabel={Povprečna normalizirana vrednost $F$},
+    xmin=0, xmax=20,
+    ymin=0.65, ymax=0.8,
+    legend pos=south east,
+    ymajorgrids=true,
+    xmajorgrids=true,
+    grid style=dashed,
+    width=12cm,
+    height=8cm,
+]
+
+% Newton method
+\addplot[
+    color=blue,
+    thick
+    ]
+    table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results.csv};
+    \addlegendentry{Newton}
+
+% Gradient method
+\addplot[
+    color=red,
+    thick
+    ]
+    table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results.csv};
+    \addlegendentry{Gradient}
+
+% Trust-constr method
+\addplot[
+    color=black!60!green,
+    thick
+    ]
+    table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results.csv};
+    \addlegendentry{Aproksimacijski trust-constr}
+
+\end{axis}
+\end{tikzpicture}
