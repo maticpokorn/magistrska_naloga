@@ -93,8 +93,17 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{pgfplotstable}
+\usepackage[table]{xcolor}
 \floatname{algorithm}{Algoritem}
 \renewcommand{\listalgorithmname}{Kazalo algoritmov}
+
+% Define colors for block matrices
+\definecolor{block1color}{RGB}{51, 153, 255}     % Bright Blue - Q block 1
+\definecolor{block2color}{RGB}{255, 51, 255}     % Bright Magenta - Q block 2
+\definecolor{block3color}{RGB}{255, 51, 51}      % Bright Red - A block 1
+\definecolor{block4color}{RGB}{51, 204, 51}      % Bright Green - A block 2
+\definecolor{block5color}{RGB}{51, 204, 51}      % Bright Green - A block 3 (same as A block 2)
+\definecolor{block6color}{RGB}{255, 153, 51}     % Bright Orange - A block 4
 
 % deklarirajte vse matematične operatorje, da jih bo LaTeX pravilno stavil
 % \DeclareMathOperator{\...}{...}
@@ -309,38 +318,62 @@ Matriko $\mathbf{Q}$ izračunamo tako, da ločeno prevedemo posamezen integral $
     \end{bmatrix}
 \end{equation}
 
-Če je 
+Odvodi reda $r$. Če je polinom oblike $p(\tau) = a_d \tau^d + a_{d-1}\tau^{d-1} + \ldots + a_2\tau^2 + a_1\tau + a_0$, potem velja:
 \begin{equation}
-    p(\tau) = \sum_{i = 0}^d a_{i} \tau^i,
+\begin{aligned}
+    p^{(0)}(\tau) &= p(\tau) = a_d \tau^d + a_{d-1}\tau^{d-1} + \ldots + a_2\tau^2 + a_1\tau + a_0\\
+    p^{(1)}(\tau) &= d\, a_d \tau^{d-1} + (d-1)a_{d-1}\tau^{d-2} + \ldots + 2a_2\tau + a_1\\
+    p^{(2)}(\tau) &= d(d-1) a_d \tau^{d-2} + (d-1)(d-2)a_{d-1}\tau^{d-3} + \ldots + 2a_2\\
+    &\vdots\\
+    p^{(r)}(\tau) &= \sum_{i=r}^{d} \left[\prod_{m=0}^{r-1} (i-m)\right]a_{i} \tau^{i-r}
+\end{aligned}
 \end{equation}
 
-potem velja:
+Kvadrat polinoma.
 \begin{equation}
-    p^{(k)}(\tau) = \sum_{i = k}^d [\prod_{m=0}^{k-1} (i-m)]a_{i} \tau^{i-r},
+\begin{aligned}
+    p(\tau)^2 &= \sum_{i=0}^{2d} \left( \sum_{j=0}^{d} a_j a_{i-j} \right) \tau^i\\
+    \text{primer: } p(\tau) &= a_1\tau + a_0\\
+    p(\tau)^2 &= (a_1\tau + a_0)(a_1\tau + a_0) = a_0 a_0 + a_0 a_1\tau + a_1 a_0\tau + a_1 a_1 \tau^2
+\end{aligned}
 \end{equation}
 
-in
+Ciljni funkcional. Z združitvijo zgornjih rezultatov:
+\begin{equation}
+\begin{aligned}
+    J &= \int_0^t (p^{(r)}(\tau))^2 d\tau\\
+    &= \int_0^t \sum_{i=0}^{2d} \left( \sum_{j=r}^{d} \prod_{m=0}^{r-1} (j-m)(i-j-m) a_j a_{i-j} \right) \tau^{i-2r} d\tau\\
+    &= \sum_{i=0}^{2d} \left( \sum_{j=r}^{d} \prod_{m=0}^{r-1} (j-m)(i-j-m) a_j a_{i-j} \right) \frac{t^{i-2r+1}}{i-2r+1}
+\end{aligned}
+\end{equation}
+Členi $\prod_{m=0}^{r-1}(j-m)(i-j-m)$ in $\frac{t^{i-2r+1}}{i-2r+1}$ so neodvisni od koeficientov. Naš cilj je preoblikovati $J$ v obliko:
+\begin{equation}
+    J = \mathbf{a}^\top \mathbf{Q} \mathbf{a} = \sum_{l=0}^{d} \sum_{k=0}^{d} \mathbf{Q}_{lk} a_l a_k
+\end{equation}
+Da ekstrahiramo elemente matrike $\mathbf{Q}$, uporabimo dvakratne parcialne odvode po $a_l$ in $a_k$ ($0 \leq l, k \leq d$):
+\begin{equation}
+\begin{aligned}
+    \frac{\partial J}{\partial a_l} &= \sum_{i=0}^{2d} \sum_{j=0}^{d} \prod_{m=0}^{r-1} (j-m)(i-j-m) \left(\frac{\partial a_j}{\partial a_l} a_{i-j} + \frac{\partial a_{i-j}}{\partial a_l} a_j \right) \frac{t^{i-2r+1}}{i-2r+1}\\
+    &= 2\sum_{i=0}^{2d} \prod_{m=0}^{r-1} (l-m)(i-l-m) a_{i-l} \frac{t^{i-2r+1}}{i-2r+1}
+\end{aligned}
+\end{equation}
+Opomba: vsota $\sum_{j=0}^{d}(\cdot)$ se poenostavi na le dva člena $j = l$ in $i - j = l$, kjer je $0 \leq l \leq d$.
+\begin{equation}
+\begin{aligned}
+    \frac{\partial^2 J}{\partial a_k \partial a_l} &= 2\sum_{i=0}^{2d} \prod_{m=0}^{r-1} (l-m)(i-l-m) \frac{\partial a_{i-l}}{\partial a_k} \frac{t^{i-2r+1}}{i-2r+1}\\
+    &= 2\prod_{m=0}^{r-1} (l-m)(k-m) \frac{t^{l+k-2r+1}}{l+k-2r+1}
+\end{aligned}
+\end{equation}
+Opomba: vsota $\sum_{i=0}^{2d}(\cdot)$ se poenostavi na le en člen $i - l = k$, kjer je $0 \leq k \leq d$.
 
+Primerjava z enačbo $J = \mathbf{a}^\top \mathbf{Q} \mathbf{a}$ nam da elemente matrike $\mathbf{Q}$:
 \begin{equation}
-    p(t)^2 = \sum_{i=0}^{2N} \left( \sum_{j=0}^{i} p_j p_{i-j} \right) t^i
+    \mathbf{Q}_{lk} = \begin{cases}
+        \prod_{m=0}^{r-1} (l - m)(k - m) \dfrac{t^{l+k-2r+1}}{l + k - 2r + 1} & l \geq r \land k \geq r\\
+        0 & l < r \lor k < r
+    \end{cases}, \quad \text{in} \quad \mathbf{Q}_{kl} = \mathbf{Q}_{lk}
 \end{equation}
-
-\begin{equation}
-    (p^{(k)}(\tau))^2 = \sum_{i=2r}^{2N} \left( \sum_{j=r}^{i-r} a_j a_{i-j} \prod_{m=0}^{r-1} (j - m)(i - j - m) \right) \tau^{i-2r}
-\end{equation}
-
-\begin{equation}
-\int_{0}^t (p^{(k)}(\tau))^2d\tau = \sum_{i=0}^{2N} \left( \sum_{j=r}^{N} \prod_{m=0}^{r-1} (j - m)(i - j - m) a_j a_{i-j} \right) \frac{t^{i-2r+1}}{i - 2r + 1}
-\end{equation}
-
-Sedaj že lahko vidimo, da ima izraz obliko:
-\begin{equation}
-    \int_{0}^t (p^{(k)}(\tau))^2d\tau = \sum_{k=0}^N\sum_{l=0}^N a_ka_l \mathbf{Q}_{kl} = \mathbf{a}^\top \mathbf{Q} \mathbf{a}
-\end{equation}
-za neko matriko $\mathbf{Q}$. Elemente $\mathbf{Q}_{kl}$ pa izračunamo tako, da izračunamo 
-\begin{equation}
-    \mathbf{Q}_{kl} = \frac{\partial^2}{\partial a_k \partial a_l}  (a_ka_l\mathbf{Q}_{kl}) = \frac{\partial^2}{\partial a_k \partial a_l} \left( \sum_{i=0}^{2N} \left( \sum_{j=r}^{N} \prod_{m=0}^{r-1} (j - m)(i - j - m) a_j a_{i-j} \right) \frac{t^{i-2r+1}}{i - 2r + 1} \right)
-\end{equation}
+S tem smo preoblikovali ciljni funkcional v kvadratno funkcijo koeficientov polinoma.
 
 \subsubsection{Izračun matrike $\amat$ in vektorja $\bvec$}
 
@@ -360,17 +393,118 @@ Matriko $\amat$ in vektor $\bvec$ izračunamo tako, da prevedemo linearne omejit
 Sedaj pokažemo, kako so strukturirane posamezne komponente matrike $\amat$. Ločeno pozornost posvetimo začetnemu bloku $\amat_1(0)$, končnemu bloku $\amat_n(t_n)$ in vmesnim parom blokov $\amat_i(t_i)$ in $-\amat_{i+1}(0)$, kjer $i = 1, \ldots, n-1$:
 
 \begin{itemize}
-\item Začetni blok $\amat_1(0)$ predstavlja omejitve začetka trajektorije, ki zahtevajo, da $p_1(0) = P_0$ in $p_1^{(k)}(0) = 0$ za $k = 1, \ldots, K$. Na primer, če je $d = 4$, $K = 2$, in se trajektorija začne pri $x=1$ oz. $P_0 = 1$, polinom pa ima obliko $p_1(\tau) = \sum_{i=0}^4 a_i \tau^i$, potem bo blok $\amat_1(0)$ izgledal takole:
-\begin{equation}
-\amat_1(0) =
-\begin{bmatrix}
-1 & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 \\
-0 & 0 & 2 & 0 & 0
-\end{bmatrix}
-\end{equation}
-in ustrezni elementi vektorja $\bvec$ bodo $[1, 0, 0]^\top$.
+\item Začetni blok $\amat_1(0)$ predstavlja omejitve začetka trajektorije, ki zahtevajo, da $p_1(0) = P_0$ in $p_1^{(k)}(0) = 0$ za $k = 1, \ldots, K$. 
+
+\item Končni blok $\amat_n(t_n)$ predstavlja omejitve konca trajektorije, ki zahtevajo, da $p_n(t_n) = P_n$ in $p_n^{(k)}(t_n) = 0$ za $k = 1, \ldots, K$.
+
+
+\item Vmesni pari blokov $\amat_i(t_i)$ in $-\amat_{i+1}(0)$ predstavljajo omejitve zveznosti trajektorije na vmesnih točkah, ki zahtevajo, da $p_i(t_i) = p_{i+1}(0) = P_i$ in $p_i^{(k)}(t_i) = p_{i+1}^{(k)}(0)$ za $k = 1, \ldots, K$ in $i = 1, \ldots, n-1$.
 \end{itemize}
+
+\subsubsection{Primer}
+Za boljše razumevanje konstrukcije QP s fiksnimi časi segmentov si oglejmo primer z $n = 2$ segmentoma, stopnjo polinomskih zlepkov $d = 4$, redom zveznosti $K = 2$ in optimizacijsko stopnjo odvoda $r = 3$. Optimizirali bomo trajektorijo v dveh dimenzijah, $x$ in $y$, pri čemer bomo uporabili sledeče vmesne točke in čase segmentov:
+\begin{equation}
+\begin{aligned}
+P_0 &= (1, 0) \\
+P_1 &= (1, 1) \\
+P_2 &= (2, 0) \\
+\tvec &= (1, 2)
+\end{aligned}
+\end{equation}
+Torej, med točko $P_0$ in $P_1$ bomo potovali $1s$, med točko $P_1$ in $P_2$ pa $2s$. Sedaj bomo izračunali matriko $\mathbf{Q}$, ki bo imela bločno diagonalno strukturo:
+\begin{equation}
+\mathbf{Q} = 
+\begin{bNiceMatrix}[columns-width=1.2em]
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{36} & \textcolor{block1color}{72} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{72} & \textcolor{block1color}{192} & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{72} & \textcolor{block2color}{288} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{288} & \textcolor{block2color}{1536}
+\end{bNiceMatrix}
+\end{equation}
+
+Če eksplicitno zapišemo odvisnost od časov $t_1$ in $t_2$, dobimo:
+\begin{equation}
+\mathbf{Q}(\tvec) = 
+\begin{bNiceMatrix}[columns-width=auto]
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{36 t_1} & \textcolor{block1color}{72 t_1^2} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{0} & \textcolor{block1color}{72 t_1^2} & \textcolor{block1color}{192 t_1^3} & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{36 t_2} & \textcolor{block2color}{72 t_2^2} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{0} & \textcolor{block2color}{72 t_2^2} & \textcolor{block2color}{192 t_2^3}
+\end{bNiceMatrix}
+\end{equation}
+
+Matriko $\amat$ izračunamo na podlagi strukture, opisane v prejšnjem podpoglavju. Za naš primer z dvema segmentoma in omejitvami do drugega odvoda dobimo:
+\begin{equation}
+\amat = 
+\begin{bNiceMatrix}[columns-width=1.2em]
+\textcolor{block3color}{1} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block3color}{0} & \textcolor{block3color}{1} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{2} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block4color}{1} & \textcolor{block4color}{1} & \textcolor{block4color}{1} & \textcolor{block4color}{1} & \textcolor{block4color}{1} & \textcolor{block5color}{-1} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{0} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{1} & \textcolor{block4color}{2} & \textcolor{block4color}{3} & \textcolor{block4color}{4} & \textcolor{block5color}{0} & \textcolor{block5color}{-1} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{0} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{2} & \textcolor{block4color}{6} & \textcolor{block4color}{12} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{-2} & \textcolor{block5color}{0} & \textcolor{block5color}{0} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block5color}{1} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{0} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{1} & \textcolor{block6color}{2} & \textcolor{block6color}{4} & \textcolor{block6color}{8} & \textcolor{block6color}{16} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{0} & \textcolor{block6color}{1} & \textcolor{block6color}{4} & \textcolor{block6color}{12} & \textcolor{block6color}{32} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{0} & \textcolor{block6color}{0} & \textcolor{block6color}{2} & \textcolor{block6color}{12} & \textcolor{block6color}{48}
+\end{bNiceMatrix}
+\end{equation}
+
+Če eksplicitno zapišemo odvisnost od časov $t_1$ in $t_2$, dobimo:
+\begin{equation}
+\footnotesize
+\amat(\tvec) = 
+\begin{bNiceMatrix}[columns-width=0.5em]
+\textcolor{block3color}{1 \cdot 0^0} & \textcolor{block3color}{1 \cdot 0^1} & \textcolor{block3color}{1 \cdot 0^2} & \textcolor{block3color}{1 \cdot 0^3} & \textcolor{block3color}{1 \cdot 0^4} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block3color}{0} & \textcolor{block3color}{1 \cdot 0^0} & \textcolor{block3color}{2 \cdot 0^1} & \textcolor{block3color}{3 \cdot 0^2} & \textcolor{block3color}{4 \cdot 0^3} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{2 \cdot 0^0} & \textcolor{block3color}{6 \cdot 0^1} & \textcolor{block3color}{12 \cdot 0^2} & 0 & 0 & 0 & 0 & 0 \\
+\textcolor{block4color}{1 \cdot t_1^0} & \textcolor{block4color}{1 \cdot t_1^1} & \textcolor{block4color}{1 \cdot t_1^2} & \textcolor{block4color}{1 \cdot t_1^3} & \textcolor{block4color}{1 \cdot t_1^4} & \textcolor{block5color}{-1 \cdot 0^0} & \textcolor{block5color}{-1 \cdot 0^1} & \textcolor{block5color}{-1 \cdot 0^2} & \textcolor{block5color}{-1 \cdot 0^3} & \textcolor{block5color}{-1 \cdot 0^4} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{1 \cdot t_1^0} & \textcolor{block4color}{2 \cdot t_1^1} & \textcolor{block4color}{3 \cdot t_1^2} & \textcolor{block4color}{4 \cdot t_1^3} & \textcolor{block5color}{0} & \textcolor{block5color}{-1 \cdot 0^0} & \textcolor{block5color}{-2 \cdot 0^1} & \textcolor{block5color}{-3 \cdot 0^2} & \textcolor{block5color}{-4 \cdot 0^3} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{2 \cdot t_1^0} & \textcolor{block4color}{6 \cdot t_1^1} & \textcolor{block4color}{12 \cdot t_1^2} & \textcolor{block5color}{0} & \textcolor{block5color}{0} & \textcolor{block5color}{-2 \cdot 0^0} & \textcolor{block5color}{-6 \cdot 0^1} & \textcolor{block5color}{-12 \cdot 0^2} \\
+\textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block5color}{1 \cdot 0^0} & \textcolor{block5color}{1 \cdot 0^1} & \textcolor{block5color}{1 \cdot 0^2} & \textcolor{block5color}{1 \cdot 0^3} & \textcolor{block5color}{1 \cdot 0^4} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{1 \cdot t_2^0} & \textcolor{block6color}{1 \cdot t_2^1} & \textcolor{block6color}{1 \cdot t_2^2} & \textcolor{block6color}{1 \cdot t_2^3} & \textcolor{block6color}{1 \cdot t_2^4} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{0} & \textcolor{block6color}{1 \cdot t_2^0} & \textcolor{block6color}{2 \cdot t_2^1} & \textcolor{block6color}{3 \cdot t_2^2} & \textcolor{block6color}{4 \cdot t_2^3} \\
+0 & 0 & 0 & 0 & 0 & \textcolor{block6color}{0} & \textcolor{block6color}{0} & \textcolor{block6color}{2 \cdot t_2^0} & \textcolor{block6color}{6 \cdot t_2^1} & \textcolor{block6color}{12 \cdot t_2^2}
+\end{bNiceMatrix}
+\end{equation}
+
+Vektorja $\bvec$ za $x$ in $y$ dimenziji sta:
+\begin{equation}
+\bvec_x = \begin{bmatrix} \textcolor{block3color}{1} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{1} & \textcolor{block6color}{2} & \textcolor{block6color}{0} & \textcolor{block6color}{0} \end{bmatrix}^\top, \quad
+\bvec_y = \begin{bmatrix} \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block3color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{0} & \textcolor{block4color}{1} & \textcolor{block6color}{0} & \textcolor{block6color}{0} & \textcolor{block6color}{0} \end{bmatrix}^\top
+\end{equation}
+
+Pri tem smo z različnimi barvami poudarili bločno strukturo matrik in določili bloke $\textcolor{block1color}{\mathbf{Q}_1(t_1)}$, $\textcolor{block2color}{\mathbf{Q}_2(t_2)}$, $\textcolor{block3color}{\amat_1(0)}$, $\textcolor{block4color}{\left[{\amat_1(t_1)} \text{ } {-\amat_2(0)}\right]}$ in $\textcolor{block6color}{\amat_2(t_2)}$.
+
+Sedaj lahko ločeno rešimo QP za $x$ in $y$ dimenzijo:
+\begin{equation}
+    \begin{aligned}
+        \min_{\avec_x} & \quad \frac{1}{2}\avec_x^\top \qmat \avec_x & \qquad & \min_{\avec_y} & \quad \frac{1}{2}\avec_y^\top \qmat \avec_y\\
+        \text{p.p.} & \quad \amat \avec_x = \bvec_x & & \text{p.p.} & \quad \amat \avec_y = \bvec_y
+    \end{aligned}
+\end{equation}
+
+Rezultat optimizacije sta vektorja $\avec_x$ in $\avec_y$, ki vsebujeta koeficiente polinomskih zlepkov za $x$ in $y$ dimenzijo. S temi koeficienti lahko nato rekonstruiramo polinomske zlepke in jih združimo v celotno trajektorijo, ki je vidna na sliki~\ref{fig:2segment}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/trajectory_2d.pdf}
+    \caption{Trajektorija, dobljena z rešitvijo QP problema za $n = 2$ segmenta, $d = 4$, $K = 2$ in $r = 3$.}
+    \label{fig:2segment}
+\end{figure}
+
 
 \subsection{Problem s časovnimi spremenljivkami}
 

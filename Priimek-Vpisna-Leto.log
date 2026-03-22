@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  14 MAR 2026 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  21 MAR 2026 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,7 +933,12 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing (1.18.1)
- (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex)))
+ (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex))) (c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks58
+\minrowclearance=\skip87
+\rownum=\count499
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -943,8 +948,8 @@ Package csquotes Info: Redefining alias 'default' -> 'slovene'.
 
  (c:/texlive/2024/texmf-dist/tex/latex/pdfx/pdfx.sty
 Package: pdfx 2024/06/24 v1.6.5f PDF/X and PDF/A support (CVR/HTH/RRM/PS)
-\pdfx@minorversion=\count499
-\pdfx@majorversion=\count500
+\pdfx@minorversion=\count500
+\pdfx@majorversion=\count501
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifpdf.sty
@@ -957,8 +962,8 @@ Package: everyshi 2020/11/18 v4.00 EveryShipout Package
 File: l8u-penc.def 2017/06/23 v0.8 Custom LaTeX file, for UTF8 encoded letters and symbols
 LaTeX Info: Composite with undeclared \b in encoding L8U on input line 278.
 )
-\pdfxsafeforxmp@toks=\toks58
-\pdfx@tmptoks=\toks59
+\pdfxsafeforxmp@toks=\toks59
+\pdfx@tmptoks=\toks60
 
 
 Package hyperref Warning: Option `pdftex' has already been used,
@@ -1443,35 +1448,35 @@ Now handling font encoding PU ...
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 129.
-Package hyperref Info: Option `colorlinks' set `true' on input line 129.
-Package hyperref Info: Option `unicode' set `true' on input line 129.
-Package hyperref Info: Option `breaklinks' set `true' on input line 129.
-Package hyperref Info: Option `psdextra' set `true' on input line 129.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 129.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 138.
+Package hyperref Info: Option `colorlinks' set `true' on input line 138.
+Package hyperref Info: Option `unicode' set `true' on input line 138.
+Package hyperref Info: Option `breaklinks' set `true' on input line 138.
+Package hyperref Info: Option `psdextra' set `true' on input line 138.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./Priimek-Vpisna-Leto.aux)
 \openout1 = `Priimek-Vpisna-Leto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
 Package biblatex Info: Trying to load language 'slovene'...
 Package biblatex Info: ... file 'slovene.lbx' found.
  (c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/slovene.lbx
@@ -1485,28 +1490,28 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Priimek-Vpisna-Leto.bbl' found.
  (./Priimek-Vpisna-Leto.bbl)
-Package biblatex Info: Reference section=0 on input line 129.
-Package biblatex Info: Reference segment=0 on input line 129.
+Package biblatex Info: Reference section=0 on input line 138.
+Package biblatex Info: Reference segment=0 on input line 138.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count501
+\scratchcounter=\count502
 \scratchdimen=\dimen333
 \scratchbox=\box71
-\nofMPsegments=\count502
-\nofMParguments=\count503
-\everyMPshowfont=\toks60
-\MPscratchCnt=\count504
+\nofMPsegments=\count503
+\nofMParguments=\count504
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count505
 \MPscratchDim=\dimen334
-\MPnumerator=\count505
-\makeMPintoPDFobject=\count506
-\everyMPtoPDFconversion=\toks61
+\MPnumerator=\count506
+\makeMPintoPDFobject=\count507
+\everyMPtoPDFconversion=\toks62
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 138.
  (./Priimek-Vpisna-Leto.out) (./Priimek-Vpisna-Leto.out)
 \@outlinefile=\write8
 \openout8 = `Priimek-Vpisna-Leto.out'.
@@ -1519,40 +1524,40 @@ Package caption Info: End \AtBeginDocument code.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 129.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 138.
 (c:/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 129.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 129.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 129.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 129.
+(Font)              <17.28> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 129.
+(Font)              <12> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 129.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 129.
+(Font)              <10> on input line 138.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 129.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 138.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 129.
+(Font)              <14.4> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 129.
+(Font)              <7> on input line 138.
 
 
 (c:/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1565,9 +1570,9 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 129.
+(Font)              <8> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 129.
+(Font)              <6> on input line 138.
 
 
 [3]
@@ -1591,19 +1596,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [8
 
 ]
-Overfull \hbox (38.13268pt too wide) in paragraph at lines 135--136
+Overfull \hbox (38.13268pt too wide) in paragraph at lines 144--145
 []\T1/lmr/m/n/12 kvadrati£ni pro-gram (qua-dra-tic pro-gram) -- op-ti-mi-za-cij-ski pro-blem oblike $[] []\OT1/lmr/bx/n/12 x[]Qx \OT1/lmr/m/n/12 +|
  []
 
 
 
 [1]
-<images/figure3d.png, id=281, 462.528pt x 346.896pt>
+<images/figure3d.png, id=286, 462.528pt x 346.896pt>
 File: images/figure3d.png Graphic file (type png)
 <use images/figure3d.png>
-Package pdftex.def Info: images/figure3d.png  used on input line 155.
+Package pdftex.def Info: images/figure3d.png  used on input line 164.
 (pdftex.def)             Requested size: 256.0774pt x 192.06905pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 163.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 172.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1619,190 +1624,222 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [6{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 293.
+(hyperref)                removing `math shift' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 293.
-
-
-Overfull \hbox (15.69649pt too wide) detected at line 343
-[][][]\OT1/lmr/bx/n/12 Q[] \OT1/lmr/m/n/12 = [](\OML/lmm/m/it/12 a[]a[]\OT1/lmr/bx/n/12 Q[]\OT1/lmr/m/n/12 ) = [] []|
- []
+(hyperref)                removing `math shift' on input line 302.
 
 
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 345.
+(hyperref)                removing `math shift' on input line 378.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 345.
+(hyperref)                removing `math shift' on input line 378.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 345.
+(hyperref)                removing `math shift' on input line 378.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 345.
+(hyperref)                removing `math shift' on input line 378.
 
-<images/phi_fixed_time.png, id=385, 289.08pt x 433.62pt>
-File: images/phi_fixed_time.png Graphic file (type png)
-<use images/phi_fixed_time.png>
-Package pdftex.def Info: images/phi_fixed_time.png  used on input line 381.
-(pdftex.def)             Requested size: 204.85802pt x 307.28348pt.
-<images/phi_variable_time.png, id=386, 289.08pt x 433.62pt>
-File: images/phi_variable_time.png Graphic file (type png)
-<use images/phi_variable_time.png>
-Package pdftex.def Info: images/phi_variable_time.png  used on input line 388.
-(pdftex.def)             Requested size: 204.85802pt x 307.28348pt.
 
 
 [8]
+\g__nicematrix_max_cell_width_dim=\dimen338
+\c@iRow=\count508
+\c@jCol=\count509
+\l__nicematrix_cell_box=\box72
+\l__nicematrix_the_array_box=\box73
+\l__nicematrix_left_delim_dim=\dimen339
+\l__nicematrix_right_delim_dim=\dimen340
+\g__nicematrix_ddots_int=\count510
+\g__nicematrix_iddots_int=\count511
+\g__nicematrix_delta_x_one_dim=\dimen341
+\g__nicematrix_delta_y_one_dim=\dimen342
+\g__nicematrix_delta_x_two_dim=\dimen343
+\g__nicematrix_delta_y_two_dim=\dimen344
+\l__nicematrix_initial_i_int=\count512
+\l__nicematrix_initial_j_int=\count513
+\l__nicematrix_final_i_int=\count514
+\l__nicematrix_final_j_int=\count515
 
-[9 <./images/phi_fixed_time.png> <./images/phi_variable_time.png>]
 
-LaTeX Warning: Reference `' on page 10 undefined on input line 425.
+[9]
 
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 467.
 
-LaTeX Warning: Reference `' on page 10 undefined on input line 425.
-
-
-LaTeX Warning: Reference `' on page 10 undefined on input line 425.
-
-
-LaTeX Warning: Reference `' on page 10 undefined on input line 425.
-
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 470.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 481.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <> on input line 481.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <0.7> on input line 481.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <0.5> on input line 481.
 
 
 [10]
+<images/trajectory_2d.pdf, id=418, 529.35541pt x 570.93298pt>
+File: images/trajectory_2d.pdf Graphic file (type pdf)
+<use images/trajectory_2d.pdf>
+Package pdftex.def Info: images/trajectory_2d.pdf  used on input line 503.
+(pdftex.def)             Requested size: 256.0774pt x 276.18779pt.
+<images/phi_fixed_time.png, id=419, 289.08pt x 433.62pt>
+File: images/phi_fixed_time.png Graphic file (type png)
+<use images/phi_fixed_time.png>
+Package pdftex.def Info: images/phi_fixed_time.png  used on input line 515.
+(pdftex.def)             Requested size: 204.85802pt x 307.28348pt.
+<images/phi_variable_time.png, id=420, 289.08pt x 433.62pt>
+File: images/phi_variable_time.png Graphic file (type png)
+<use images/phi_variable_time.png>
+Package pdftex.def Info: images/phi_variable_time.png  used on input line 522.
+(pdftex.def)             Requested size: 204.85802pt x 307.28348pt.
 
-[11]
-Overfull \hbox (2.52068pt too wide) in paragraph at lines 548--549
-[]\T1/lmr/m/n/12 Pokazati mo-ramo, da je Ja-co-bi-jeva ma-trika par-ci-al-nih od-vo-dov ena£be $\OML/lmm/m/it/12 K\OT1/lmr/bx/n/12 y[] \OMS/lmsy/m/n/12 ^^@|
- []
+
+[11 <./images/trajectory_2d.pdf>]
+
+[12 <./images/phi_fixed_time.png> <./images/phi_variable_time.png>]
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 559.
 
 
-
-[12]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 602.
+LaTeX Warning: Reference `' on page 13 undefined on input line 559.
 
 
-LaTeX Warning: Reference `sec:implementation_details' on page 13 undefined on input line 630.
+LaTeX Warning: Reference `' on page 13 undefined on input line 559.
 
 
-LaTeX Warning: Reference `sec:implementation_details' on page 13 undefined on input line 630.
-
-
-LaTeX Warning: Reference `alg:backtracking' on page 13 undefined on input line 659.
+LaTeX Warning: Reference `' on page 13 undefined on input line 559.
 
 
 
 [13]
 
 [14]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 661.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 661.
+Overfull \hbox (2.52068pt too wide) in paragraph at lines 682--683
+[]\T1/lmr/m/n/12 Pokazati mo-ramo, da je Ja-co-bi-jeva ma-trika par-ci-al-nih od-vo-dov ena£be $\OML/lmm/m/it/12 K\OT1/lmr/bx/n/12 y[] \OMS/lmsy/m/n/12 ^^@|
+ []
 
 
 
 [15]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 736.
+
+
+LaTeX Warning: Reference `sec:implementation_details' on page 16 undefined on input line 764.
+
+
+LaTeX Warning: Reference `sec:implementation_details' on page 16 undefined on input line 764.
+
+
+LaTeX Warning: Reference `alg:backtracking' on page 16 undefined on input line 793.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 795.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 795.
+
+
 
 [16]
-Underfull \vbox (badness 1540) has occurred while \output is active []
-
-
 
 [17]
-<images/hessian_heatmap.png, id=536, 462.528pt x 346.896pt>
-File: images/hessian_heatmap.png Graphic file (type png)
-<use images/hessian_heatmap.png>
-Package pdftex.def Info: images/hessian_heatmap.png  used on input line 836.
-(pdftex.def)             Requested size: 213.39566pt x 160.05048pt.
-
 
 [18]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 847.
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[20]
+<images/hessian_heatmap.png, id=596, 462.528pt x 346.896pt>
+File: images/hessian_heatmap.png Graphic file (type png)
+<use images/hessian_heatmap.png>
+Package pdftex.def Info: images/hessian_heatmap.png  used on input line 970.
+(pdftex.def)             Requested size: 213.39566pt x 160.05048pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 981.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Reference `' on page 19 undefined on input line 847.
+LaTeX Warning: Reference `' on page 21 undefined on input line 981.
 
-<images/iterations_viz.pdf, id=551, 554.07625pt x 728.98158pt>
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+
+
+[21 <./images/hessian_heatmap.png>]
+<images/iterations_viz.pdf, id=610, 554.07625pt x 728.98158pt>
 File: images/iterations_viz.pdf Graphic file (type pdf)
 <use images/iterations_viz.pdf>
-Package pdftex.def Info: images/iterations_viz.pdf  used on input line 853.
+Package pdftex.def Info: images/iterations_viz.pdf  used on input line 987.
 (pdftex.def)             Requested size: 422.52576pt x 555.9116pt.
-<images/convergence_analysis.png, id=552, 462.528pt x 346.896pt>
+<images/convergence_analysis.png, id=611, 462.528pt x 346.896pt>
 File: images/convergence_analysis.png Graphic file (type png)
 <use images/convergence_analysis.png>
-Package pdftex.def Info: images/convergence_analysis.png  used on input line 860.
+Package pdftex.def Info: images/convergence_analysis.png  used on input line 994.
 (pdftex.def)             Requested size: 341.43436pt x 256.09029pt.
-(./tikz/convergence_analysis_40.tex
+ (./tikz/convergence_analysis_40.tex
 Package pgfplots info on input line 13: Overriding colorspace to rgb due to xcolor configuration.
 PGFPlots: reading {data/convergence_results.csv}
 PGFPlots: reading {data/convergence_results.csv}
 PGFPlots: reading {data/convergence_results.csv}
 )
 
-LaTeX Warning: Reference `' on page 19 undefined on input line 879.
+LaTeX Warning: Reference `' on page 22 undefined on input line 1013.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[19 <./images/hessian_heatmap.png>]
-
-[20 <./images/iterations_viz.pdf>]
-
-[21 <./images/convergence_analysis.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 885.
-
-Overfull \hbox (6.72726pt too wide) in paragraph at lines 884--886
+Overfull \hbox (6.72726pt too wide) in paragraph at lines 1018--1020
 [][]\T1/lmr/bx/n/12 Definicija 6.1. []\T1/lmr/m/n/12 Ne-skon£no za-po-redje kom-ple-ksnih ²te-vil, ozna-£eno z $\OML/lmm/m/it/12 ! \OT1/lmr/m/n/12 = (\OML/lmm/m/it/12 ![]; ![]; []\OT1/lmr/m/n/12 )$\T1/lmr/m/n/12 ,|
  []
 
 
 
 [22]
-<images/sample.pdf, id=671, 123.75395pt x 72.17252pt>
+
+[23 <./images/iterations_viz.pdf>]
+
+[24 <./images/convergence_analysis.png>]
+<images/sample.pdf, id=724, 123.75395pt x 72.17252pt>
 File: images/sample.pdf Graphic file (type pdf)
 <use images/sample.pdf>
-Package pdftex.def Info: images/sample.pdf  used on input line 936.
+Package pdftex.def Info: images/sample.pdf  used on input line 1070.
 (pdftex.def)             Requested size: 256.0774pt x 149.34656pt.
-<images/image.png, id=672, 510.9489pt x 136.1085pt>
+<images/image.png, id=725, 510.9489pt x 136.1085pt>
 File: images/image.png Graphic file (type png)
 <use images/image.png>
-Package pdftex.def Info: images/image.png  used on input line 946.
+Package pdftex.def Info: images/image.png  used on input line 1080.
 (pdftex.def)             Requested size: 341.43436pt x 90.95337pt.
 
 
-[23 <./images/sample.pdf> <./images/image.png>]
+[25 <./images/sample.pdf> <./images/image.png>]
 
-[24]
-
-[25]
-
-[26
-
-]
+[26]
 
 [27]
 
 [28]
 
-[29] (./Priimek-Vpisna-Leto.aux)
+[29
+
+]
+
+[30]
+
+[31] (./Priimek-Vpisna-Leto.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1812,27 +1849,27 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Priimek-Vpisna-Leto.out' has not changed.
-(rerunfilecheck)             Checksum: 1B7D8BE6F89B7375F45C8EA24124BEC5;4604.
+(rerunfilecheck)             Checksum: 9FD21147C03C30B06B7F91C9AC069757;4669.
 Package logreq Info: Writing requests to 'Priimek-Vpisna-Leto.run.xml'.
 \openout1 = `Priimek-Vpisna-Leto.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48725 strings out of 473201
- 1102127 string characters out of 5720299
- 1990258 words of memory out of 5000000
- 70997 multiletter control sequences out of 15000+600000
- 682622 words of font info for 117 fonts, out of 8000000 for 9000
+ 53692 strings out of 473201
+ 1200112 string characters out of 5720299
+ 2174961 words of memory out of 5000000
+ 75950 multiletter control sequences out of 15000+600000
+ 703418 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,23n,95p,1481b,3510s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,24n,95p,1481b,3528s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{algorithm.1} has been referenced but does not exist, replaced by a fixed one
 
-<c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Priimek-Vpisna-Leto.pdf (37 pages, 824784 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Priimek-Vpisna-Leto.pdf (39 pages, 1028363 bytes).
 PDF statistics:
- 897 PDF objects out of 1000 (max. 8388607)
- 713 compressed objects within 8 object streams
- 224 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 959 PDF objects out of 1000 (max. 8388607)
+ 764 compressed objects within 8 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

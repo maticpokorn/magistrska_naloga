@@ -11,31 +11,32 @@
 \contentsline {subsection}{\numberline {3.2}Prevedba na QP}{7}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Izračun matrike $\mathbf {Q}$}{7}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Izračun matrike $\mathbf {A}$ in vektorja $\mathbf {b}$}{8}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Problem s časovnimi spremenljivkami}{8}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Odvajanje s KKT pogoji}{10}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}KKT pogoji QP}{11}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Izrek o implicitni funkciji}{12}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Računanje gradienta}{13}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Računanje Hessove matrike}{13}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Newtonova metoda in optimizacijski algoritem}{13}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Pohitritve}{15}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Faktorizacija KKT matrike $\mathbf {K}$}{15}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Računanje desne strani linearnih sistemov enačb}{16}{subsubsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}Pasovna struktura Hessove matrike}{19}{subsubsection.3.6.3}%
-\contentsline {section}{\numberline {4}Eksperimenti}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Implementacija in uporaba zunanjih knjižnic}{19}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {3.2.3}Primer}{9}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Problem s časovnimi spremenljivkami}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Odvajanje s KKT pogoji}{13}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}KKT pogoji QP}{14}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Izrek o implicitni funkciji}{14}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Računanje gradienta}{15}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Računanje Hessove matrike}{16}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Newtonova metoda in optimizacijski algoritem}{16}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Pohitritve}{16}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Faktorizacija KKT matrike $\mathbf {K}$}{16}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Računanje desne strani linearnih sistemov enačb}{18}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Pasovna struktura Hessove matrike}{21}{subsubsection.3.6.3}%
+\contentsline {section}{\numberline {4}Eksperimenti}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Implementacija in uporaba zunanjih knjižnic}{22}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Konvergenca}{22}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Hitrost}{22}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Pasovna struktura Hessove matrike}{22}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Zaključek}{22}{section.5}%
 \contentsline {section}{\numberline {6}Integrali po $\omega $-kompleksih}{22}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Definicija}{22}{subsection.6.1}%
-\contentsline {section}{\numberline {7}Tehnični napotki za pisanje}{22}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Okrajšave}{22}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Vstavljanje slik}{23}{subsection.7.2}%
-\contentsline {section}{\numberline {A}Dodatni izpeljavi}{23}{appendix.A}%
-\contentsline {section}{\numberline {B}Podrobnosti implementacije}{23}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Einsteinova sumacijska notacija}{24}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Vektorizacija vhodnih podatkov}{24}{subsection.B.2}%
-\contentsline {subsection}{\numberline {B.3}Izračun gradienta}{25}{subsection.B.3}%
-\contentsline {section}{Literatura}{27}{section*.13}%
+\contentsline {section}{\numberline {7}Tehnični napotki za pisanje}{25}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Okrajšave}{25}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Vstavljanje slik}{25}{subsection.7.2}%
+\contentsline {section}{\numberline {A}Dodatni izpeljavi}{26}{appendix.A}%
+\contentsline {section}{\numberline {B}Podrobnosti implementacije}{26}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Einsteinova sumacijska notacija}{26}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Vektorizacija vhodnih podatkov}{26}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Izračun gradienta}{27}{subsection.B.3}%
+\contentsline {section}{Literatura}{29}{section*.14}%

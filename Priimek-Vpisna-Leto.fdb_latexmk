@@ -1,27 +1,27 @@
 # Fdb version 4
-["biber Priimek-Vpisna-Leto"] 1773495390.22255 "Priimek-Vpisna-Leto.bcf" "Priimek-Vpisna-Leto.bbl" "Priimek-Vpisna-Leto" 1773498814.2529 0
-  "Priimek-Vpisna-Leto.bcf" 1773498812 112621 c09db472c8f79c2b98c2e98582d0d4e7 "pdflatex"
+["biber Priimek-Vpisna-Leto"] 1774107205.59314 "Priimek-Vpisna-Leto.bcf" "Priimek-Vpisna-Leto.bbl" "Priimek-Vpisna-Leto" 1774113842.93299 0
+  "Priimek-Vpisna-Leto.bcf" 1774113842 112621 c09db472c8f79c2b98c2e98582d0d4e7 "pdflatex"
   "literatura.bib" 1773482996 12594 5b090c500be4926e0c31e81b9396ff98 ""
   (generated)
   "Priimek-Vpisna-Leto.bbl"
   "Priimek-Vpisna-Leto.blg"
   (rewritten before read)
-["makeindex Priimek-Vpisna-Leto.idx"] 1773498632.0254 "Priimek-Vpisna-Leto.idx" "Priimek-Vpisna-Leto.ind" "Priimek-Vpisna-Leto" 1773498814.24678 0
-  "Priimek-Vpisna-Leto.idx" 1773498802 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex Priimek-Vpisna-Leto.idx"] 1774109000.41074 "Priimek-Vpisna-Leto.idx" "Priimek-Vpisna-Leto.ind" "Priimek-Vpisna-Leto" 1774113842.93236 0
+  "Priimek-Vpisna-Leto.idx" 1774113836 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Priimek-Vpisna-Leto.ilg"
   "Priimek-Vpisna-Leto.ind"
   (rewritten before read)
-["pdflatex"] 1773498798.24142 "c:/Users/matic/Faks/MAG/2025_magistrska/Priimek-Vpisna-Leto.tex" "Priimek-Vpisna-Leto.pdf" "Priimek-Vpisna-Leto" 1773498814.25584 0
-  "Priimek-Vpisna-Leto.aux" 1773498812 18625 d53269dafa91e9127485a093955a73b2 "pdflatex"
-  "Priimek-Vpisna-Leto.bbl" 1773495399 63221 36614a5d3e5bbf1599e46fae7fbb5316 "biber Priimek-Vpisna-Leto"
-  "Priimek-Vpisna-Leto.ind" 1773498633 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Priimek-Vpisna-Leto.idx"
-  "Priimek-Vpisna-Leto.out" 1773498812 4604 1b7d8be6f89b7375f45c8ea24124bec5 "pdflatex"
-  "Priimek-Vpisna-Leto.run.xml" 1773498812 2410 7108e1d66acadc98e10e455198a79141 "pdflatex"
-  "Priimek-Vpisna-Leto.tex" 1773498793 72649 fb63bdc9c3f860e67c3869ca5ee8ec41 ""
-  "Priimek-Vpisna-Leto.toc" 1773498812 3607 4c135df941c5dacd54daaa9a53eed4f6 "pdflatex"
-  "Priimek-Vpisna-Leto.xmpdata" 1773498805 257 1af1e0625ef0c6d2621d63058b233a3a "pdflatex"
-  "c:/Users/matic/Faks/MAG/2025_magistrska/Priimek-Vpisna-Leto.tex" 1773498793 72649 fb63bdc9c3f860e67c3869ca5ee8ec41 ""
+["pdflatex"] 1774113834.64632 "c:/Users/matic/Faks/MAG/2025_magistrska/Priimek-Vpisna-Leto.tex" "Priimek-Vpisna-Leto.pdf" "Priimek-Vpisna-Leto" 1774113842.93386 0
+  "Priimek-Vpisna-Leto.aux" 1774113841 44286 eb209753734930aa7a50f962c301e2fd "pdflatex"
+  "Priimek-Vpisna-Leto.bbl" 1774107209 63221 36614a5d3e5bbf1599e46fae7fbb5316 "biber Priimek-Vpisna-Leto"
+  "Priimek-Vpisna-Leto.ind" 1774109001 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Priimek-Vpisna-Leto.idx"
+  "Priimek-Vpisna-Leto.out" 1774113842 4669 9fd21147c03c30b06b7f91c9ac069757 "pdflatex"
+  "Priimek-Vpisna-Leto.run.xml" 1774113842 2410 7108e1d66acadc98e10e455198a79141 "pdflatex"
+  "Priimek-Vpisna-Leto.tex" 1774113824 86701 41e47277575ce26bff915984ff258ae6 ""
+  "Priimek-Vpisna-Leto.toc" 1774113842 3690 508843e843a0ea8f67afe1ac22664e10 "pdflatex"
+  "Priimek-Vpisna-Leto.xmpdata" 1774113838 257 1af1e0625ef0c6d2621d63058b233a3a "pdflatex"
+  "c:/Users/matic/Faks/MAG/2025_magistrska/Priimek-Vpisna-Leto.tex" 1774113824 86701 41e47277575ce26bff915984ff258ae6 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1740129085 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1740129085 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1740129085 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -81,7 +81,13 @@
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm" 1740129086 16984 f7462c768466838a2a9e916b6dee71c6 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmri8.tfm" 1740129086 16976 7228e7c7bc486e2318fc496e0de33875 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm" 1740129087 1596 1d4548788e389ded56d0b01b28377882 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1740125413 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1740125413 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1740125413 35752 024fb6c41858982481f6968b5fc26508 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1740125413 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1740125413 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1740125413 34694 870c211f62cb72718a00e353f14f254d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1740129087 121021 836464b5fe0c782d94085eb083550ccc ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1740129087 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx8.pfb" 1740129087 125241 791aeb35ceacc2764a175b32709cc6a9 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb" 1740129087 116427 4909e80035dae5d5a4ec2b5ddd9649dd ""
@@ -267,6 +273,7 @@
   "c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty" 1740126008 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty" 1740126008 72619 ee90b6612147680fd73c3b1406a74245 ""
   "c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty" 1740126008 12494 0c0cdb824278a4d51cefeb2e79901315 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty" 1740126271 12726 67708fc852a887b2ba598148f60c3756 ""
   "c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.cfg" 1740126433 7068 06f8d141725d114847527a66439066b6 ""
   "c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.def" 1740126433 22135 0975a49eeaed232aa861e9425ffb2e7c ""
   "c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.sty" 1740126433 62767 e79d6d7a989e7da62dcf3d0a65c1faee ""
@@ -352,7 +359,8 @@
   "images/phi_fixed_time.png" 1768667958 31033 face1ac02e145e3e1ed1859f367815f0 ""
   "images/phi_variable_time.png" 1768667973 31494 374256d37dacb2f29a00f5841df6d609 ""
   "images/sample.pdf" 1768658202 12259 33a089b374602ac47ab1ae0b7cb56d0e ""
-  "pdfa.xmpi" 1773498806 5598 3b8150a48bf537d5262f29781d1d64fb "pdflatex"
+  "images/trajectory_2d.pdf" 1774108791 171067 a9f5f708e89be9579725d9664d88a33c ""
+  "pdfa.xmpi" 1774113838 5598 6331d72198debe74a04fce2d60a5ff5c "pdflatex"
   "tikz/convergence_analysis_40.tex" 1771768904 965 2f1a2529d82192d3674f595f3e48370d ""
   (generated)
   "Priimek-Vpisna-Leto.aux"
