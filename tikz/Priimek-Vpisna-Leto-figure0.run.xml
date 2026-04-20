@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Priimek-Vpisna-Leto.bcf</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Priimek-Vpisna-Leto.bbl</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -60,23 +60,23 @@
       <file>slovene.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Priimek-Vpisna-Leto</infile>
+      <infile>tikz/Priimek-Vpisna-Leto-figure0</infile>
     </cmdline>
     <input>
-      <file>Priimek-Vpisna-Leto.bcf</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bcf</file>
     </input>
     <output>
-      <file>Priimek-Vpisna-Leto.bbl</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Priimek-Vpisna-Leto.bbl</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Priimek-Vpisna-Leto.bcf</file>
+      <file>tikz/Priimek-Vpisna-Leto-figure0.bcf</file>
     </requires>
     <requires type="editable">
       <file>literatura.bib</file>
