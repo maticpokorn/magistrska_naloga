@@ -20,10 +20,9 @@
     \begin{tikzpicture}
     \begin{axis}[
         xlabel={Iteracija},
-        ylabel={Vrednost $F$},
+        ylabel={Povprečna izboljšava},
         xmin=0, xmax=20,
         ymin=\ymina, ymax={\ymina+\yrange},
-        legend pos=south east,
         xmajorgrids=true,
         ymajorgrids=true,
         minor tick num=1,
@@ -35,11 +34,11 @@
     ]
     \addplot[color=blue, thick] table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results_random_5.csv};
     \addplot[color=red, thick] table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results_random_5.csv};
+    \addplot[color=orange, thick] table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results_random_5.csv};
     \addplot[color=black!60!green, thick] table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results_random_5.csv};
-    \legend{Newton, Gradient, Trust-constr}
     \end{axis}
     \end{tikzpicture}
-    \caption{$n=5$ točk}
+    \caption{5 točk}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{\width}
@@ -47,10 +46,9 @@
     \begin{tikzpicture}
     \begin{axis}[
         xlabel={Iteracija},
-        ylabel={Vrednost $F$},
+        ylabel={Povprečna izboljšava},
         xmin=0, xmax=20,
         ymin=\yminb, ymax={\yminb+\yrange},
-        legend pos=south east,
         xmajorgrids=true,
         ymajorgrids=true,
         minor tick num=1,
@@ -62,11 +60,11 @@
     ]
     \addplot[color=blue, thick] table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results_random_10.csv};
     \addplot[color=red, thick] table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results_random_10.csv};
+    \addplot[color=orange, thick] table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results_random_10.csv};
     \addplot[color=black!60!green, thick] table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results_random_10.csv};
-    \legend{Newton, Gradient, Trust-constr}
     \end{axis}
     \end{tikzpicture}
-    \caption{$n=10$ točk}
+    \caption{10 točk}
 \end{subfigure}
 
 \vspace{0.5cm}
@@ -76,10 +74,9 @@
     \begin{tikzpicture}
     \begin{axis}[
         xlabel={Iteracija},
-        ylabel={Vrednost $F$},
+        ylabel={Povprečna izboljšava},
         xmin=0, xmax=20,
         ymin=\yminc, ymax={\yminc+\yrange},
-        legend pos=south east,
         xmajorgrids=true,
         ymajorgrids=true,
         minor tick num=1,
@@ -91,11 +88,11 @@
     ]
     \addplot[color=blue, thick] table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results_random_20.csv};
     \addplot[color=red, thick] table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results_random_20.csv};
+    \addplot[color=orange, thick] table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results_random_20.csv};
     \addplot[color=black!60!green, thick] table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results_random_20.csv};
-    \legend{Newton, Gradient, Trust-constr}
     \end{axis}
     \end{tikzpicture}
-    \caption{$n=20$ točk}
+    \caption{20 točk}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{\width}
@@ -103,10 +100,9 @@
     \begin{tikzpicture}
     \begin{axis}[
         xlabel={Iteracija},
-        ylabel={Vrednost $F$},
+        ylabel={Povprečna izboljšava},
         xmin=0, xmax=20,
         ymin=\ymind, ymax={\ymind+\yrange},
-        legend pos=south east,
         xmajorgrids=true,
         ymajorgrids=true,
         minor tick num=1,
@@ -118,38 +114,39 @@
     ]
     \addplot[color=blue, thick] table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results_random_30.csv};
     \addplot[color=red, thick] table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results_random_30.csv};
+    \addplot[color=orange, thick] table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results_random_30.csv};
     \addplot[color=black!60!green, thick] table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results_random_30.csv};
-    \legend{Newton, Gradient, Trust-constr}
     \end{axis}
     \end{tikzpicture}
-    \caption{$n=30$ točk}
+    \caption{30 točk}
 \end{subfigure}
 
 \vspace{0.5cm}
 
-\begin{subfigure}[b]{\width}
+\begin{subfigure}[b]{\textwidth}
     \centering
     \begin{tikzpicture}
     \begin{axis}[
         xlabel={Iteracija},
-        ylabel={Vrednost $F$},
+        ylabel={Povprečna izboljšava},
         xmin=0, xmax=20,
         ymin=\ymine, ymax={\ymine+\yrange},
-        legend pos=south east,
         xmajorgrids=true,
         ymajorgrids=true,
         minor tick num=1,
         grid=both,
         grid style=\gridstyle,
-        width=\plotwidth,
+        legend style={at={(1.15,0.5)}, anchor=west, draw=none, fill=none},
+        width=0.343\textwidth,
         height=5cm,
         scale only axis,
     ]
     \addplot[color=blue, thick] table [x=iteration, y expr=\thisrow{newton_mean}, col sep=comma] {data/convergence_results_random_40.csv};
     \addplot[color=red, thick] table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results_random_40.csv};
+    \addplot[color=orange, thick] table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results_random_40.csv};
     \addplot[color=black!60!green, thick] table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results_random_40.csv};
-    \legend{Newton, Gradient, Trust-constr}
+    \legend{Newton, Gradient, Numerični TC, Analitični TC}
     \end{axis}
     \end{tikzpicture}
-    \caption{$n=40$ točk}
+    \caption{40 točk}
 \end{subfigure}

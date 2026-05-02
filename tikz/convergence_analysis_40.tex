@@ -28,13 +28,21 @@
     table [x=iteration, y expr=\thisrow{gradient_mean}, col sep=comma] {data/convergence_results.csv};
     \addlegendentry{Gradient}
 
-% Trust-constr method
+% SciPy trust-constr (numerical)
+\addplot[
+    color=orange,
+    thick
+    ]
+    table [x=iteration, y expr=\thisrow{scipy_mean}, col sep=comma] {data/convergence_results.csv};
+    \addlegendentry{Numerični trust-constr}
+
+% Trust-constr method (analytical)
 \addplot[
     color=black!60!green,
     thick
     ]
     table [x=iteration, y expr=\thisrow{trust-constr_mean}, col sep=comma] {data/convergence_results.csv};
-    \addlegendentry{Aproksimacijski trust-constr}
+    \addlegendentry{Analitični trust-constr}
 
 \end{axis}
 \end{tikzpicture}
