@@ -38,7 +38,7 @@
 % - povzetek v slovenščini
 %   V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Za načrtovanje zveznih trajektorij diferencialno ploščatih sistemov, kot so kvadrotorji, je eden izmed ustaljenih načinov dvonivojska optimizacija, kjer je spodnji nivo definiran kot kvadratični program (QP), zgornji nivo pa se rešuje z izračunom gradienta optimalne rešitve spodnjega nivoja; tega se s pomočjo občutljivostne analize KKT pogojev QP in izreka o implicitni funkciji da izračunati analitično. V tem delu naredimo korak dlje in analitično izračunamo parcialne odvode drugega reda optimalne rešitve QP, kar omogoči optimizacijo z Newtonovo metodo in posledično konvergenco k optimalni rešitvi v bistveno manj korakih kot z obstoječimi pristopi. Z izkoriščenjem strukture matrik cenovne funkcije in linearnih omejitev dosežemo dodatne pohitritve.}
+\povzetek{Za načrtovanje zveznih trajektorij diferencialno ploščatih sistemov, kot so kvadrotorji, je eden izmed ustaljenih načinov dvonivojska optimizacija, kjer je spodnji nivo definiran kot kvadratni program (QP), zgornji nivo pa se rešuje z izračunom gradienta optimalne rešitve spodnjega nivoja; tega se s pomočjo občutljivostne analize KKT pogojev QP in izreka o implicitni funkciji da izračunati analitično. V tem delu naredimo korak dlje in analitično izračunamo parcialne odvode drugega reda optimalne rešitve QP, kar omogoči optimizacijo z Newtonovo metodo in posledično konvergenco k optimalni rešitvi v bistveno manj korakih kot z obstoječimi pristopi. Z izkoriščenjem strukture matrik cenovne funkcije in linearnih omejitev dosežemo dodatne pohitritve.}
 
 % - povzetek v angleščini
 \abstract{Bilevel optimization is an established approach to continuous trajectory planning for differentially flat systems such as quadrotors, where the lower level is defined as a quadratic program (QP) and the upper level is solved with computing the gradient of the optimal solution of the lower level. The gradient can be computed analytically via the sensitivity analysis of the QP's KKT conditions and use of the implicit function theorem. In this work we take a step further and analytically compute second order derivatives of the QP optimal solution, enabling the use of the Newton method and consequently convergence to the optimum in significantly less iterations than with existing approaches. Utilising the structures of the cost and constraint matrices we achieve additional speed-ups.}
@@ -149,8 +149,8 @@
 % Declare all acronyms
 \DeclareAcronym{QP}{
   short = QP,
-  long = kvadratični program,
-  long-plural-form = kvadratični programi,
+  long = kvadratni program,
+  long-plural-form = kvadratni programi,
   foreign = quadratic program,
   foreign-plural = quadratic programs
 }
@@ -187,8 +187,8 @@
 
 \DeclareAcronym{PID}{
   short = PID,
-  long = proporcionalno-integralsko-odvajalni krmilnik,
-  foreign = proportional-integral-derivative controller
+  long = proporcionalno-integralsko-odvajalni,
+  foreign = proportional-integral-derivative
 }
 \DeclareAcronym{mpec}{
   short = MPEC,
@@ -298,7 +298,7 @@ je diferencialno ploščat, če lahko najdemo tak nabor izhodnih spremenljivk $y
 
 Diferencialno ploščati sistemi upravljanja so koristni v primerih, kot je naš, kjer želimo eksplicitno določiti trajektorije. Tako lahko iz dovolj gladke trajektorije (izhoda) preprosto zračunamo vhod in stanje sistema. Izkaže se, da so tudi kvadrotorji diferencialno ploščati sistemi; postopek prevedbe iz izhodov na vhode sistema kvadrotorja je opisan v \cite{mellinger2011minimum}. V tem delu se osredotočimo na generiranje optimalnih trajektorij, diferencialna ploščatost pa je pomembna, ker želimo, da sistem trajektoriji dejansko sledi.
 
-Pomemben vidik je tudi konstrukcija krmilnih sistemov za kvadrotorje. Obstajajo različni pristopi, kot so \ac{PID} krmilniki, linearni kvadratni regulatorji (\acs{LQR}), modelno prediktivno krmiljenje (\acs{MPC}) in krmilniki, osnovani na diferencialni ploščatosti (\acs{DFBC}) \cite{lee2010geometric}. Za diferencialno ploščate sisteme, kot so kvadrotorji, in agresivne manevre, so najbolj primerni nelinearni \ac{MPC} krmilniki in \ac{DFBC} krmilniki \cite{sun2022comparative}, saj lahko upoštevajo omejitve sistema in zagotavljajo stabilnost. \ac{MPC} krmilniki optimizirajo krmilne vhode na vsakem časovnem koraku glede na napovedano prihodnost, medtem ko \ac{DFBC} krmilniki neposredno izračunajo krmilne vhode iz trajektorije, kar omogoča hitro odzivanje in sledenje trajektoriji. V zadnjih letih se pojavljajo tudi krmilniki, ki uporabljajo metode strojnega učenja, kot so spodbujevano učenje (reinforcement learning) \cite{hwangbo2017control} ali odvedljivi \ac{MPC} krmilniki \cite{amos2018differentiable}.
+Pomemben vidik je tudi konstrukcija krmilnih sistemov za kvadrotorje. Obstajajo različni pristopi, kot so \ac{PID} krmilniki, \ac{LQR}, \acs{MPC} in \acs{DFBC} \cite{lee2010geometric}. Za diferencialno ploščate sisteme, kot so kvadrotorji, in agresivne manevre, so najbolj primerni nelinearni \ac{MPC} krmilniki in \ac{DFBC} krmilniki \cite{sun2022comparative}, saj lahko upoštevajo omejitve sistema in zagotavljajo stabilnost. \ac{MPC} krmilniki optimizirajo krmilne vhode na vsakem časovnem koraku glede na napovedano prihodnost, medtem ko \ac{DFBC} krmilniki neposredno izračunajo krmilne vhode iz trajektorije, kar omogoča hitro odzivanje in sledenje trajektoriji. V zadnjih letih se pojavljajo tudi krmilniki, ki uporabljajo metode strojnega učenja, kot so spodbujevano učenje (reinforcement learning) \cite{hwangbo2017control} ali odvedljivi \ac{MPC} krmilniki \cite{amos2018differentiable}.
 
 V tem delu se osredotočamo na generiranje optimalnih trajektorij, ki so nato lahko uporabljene z različnimi krmilnimi sistemi, vključno z \ac{MPC} in \ac{DFBC} krmilniki, odvisno od specifičnih zahtev aplikacije in želene ravni nadzora nad sistemom.
 
@@ -340,7 +340,7 @@ Znan primer dvonivojske optimizacije je Stacklebergova igra \cite{stackelberg193
 
 Dvonivojska optimizacija v načrtovanju trajektorij brezpilotnikov in v robotiki na splošno se navadno uporablja, ko je optimizacijski problem odvisen od časovne razporeditve in nekaterih drugih parametrov, ki pa so tudi odvisni od časovne razporeditve. V našem primeru so to koeficienti polinomov. Pogosto se, kot v našem primeru, izkaže, da se da spodnji nivo izraziti kot \ac{QP}, ki se ga da rešiti s standardnimi knjižnicami. Tudi problem v \cite{mellinger2011minimum} je implicitno definiran kot dvonivojski optimizacijski problem. V \cite{sun2021fast} poleg izračuna analitičnih gradientov svojo rešitev podkrepijo teoretično. Izven domene načrtovanja trajektorij v \cite{amos2017optnet} dvonivojsko optimizacijo na \ac{QP} uporabijo za integracijo \ac{QP} kot plast v golobkih nevronskih mrežah, kjer so parametri \ac{QP} odvisni od drugih plasti v nevronski mreži. V \cite{dyro2022second} razvijejo teorijo računanja Hessove matrike zgornjega problema splošnih dvonivojskih neomejenih optimizacijskih problemov z uporabo \acl{IIF} (\acs{IIF}); z eksperimenti tudi pokažejo hitrejšo konvergenco kot obstoječe metode.
 
-Poleg robotike se dvonivojska optimizacija aplikativno uporablja tudi v ekonomiji
+%Poleg robotike se dvonivojska optimizacija aplikativno uporablja tudi v ekonomiji
 
 \subsection{Newtonova metoda}
 Newtonova metoda je iterativna metoda za iskanje ekstremov dvakrat zvezno odvedljivih funkcij \cite{newton1736method, boyd2004convex}. Korak v iteraciji Newtonove metode za funkcije več spremenljivk se izračuna z enačbo
@@ -384,10 +384,10 @@ Definirano imamo zaporedje vmesnih točk $P_0, \ldots P_n$ in potovalne čase za
 Pravzaprav tak problem rešujemo trikrat, posebej za vsako od osi $x$, $y$ ter $z$, kjer $t_i$ ostane isti, spremenijo pa se zgolj koordinate vmesnih točk $P_i$ za posamezno os. Z nekaj svobode pa lahko izberemo parametre:
 \begin{itemize}
     \item $d$, stopnja polinomskih zlepkov
-    \item $k$, red zveznosti trajektorije
+    \item $K$, red zveznosti trajektorije
     \item $r$, optimizacijska stopnja odvoda
 \end{itemize}
-Veljati mora $r \leq k \leq d$, standardne vrednosti pa so $d = 9$, $r = 3$ (trzaj) ali $r = 4$ (pok) ter $k = r$.
+%Veljati mora $r \leq k \leq d$, standardne vrednosti pa so $d = 9$, $r = 3$ (trzaj) ali $r = 4$ (pok) ter $k = r$.
 
 \subsection{Prevedba na \acs{QP}}
 \label{sec:prevedba}
@@ -399,7 +399,7 @@ V tem razdelku opišemo, kako problem, predstavljen v ~\eqref{eq:functional} pre
         \text{p.p.}\quad & \mathbf{A}\mathbf{a} = \mathbf{b},
     \end{aligned}
 \end{equation}
-kjer je $\mathbf{a} \in \mathbb{R}^{n (d+1)}$ optimizacijski vektor in predstavlja koeficiente polinomskih zlepkov, $\mathbf{Q} \in \mathbb{R}^{n(d+1) \times n(d+1)}$ je simetrična in pozitivno definitna matrika, $\mathbf{A} \in \mathbb{R}^{M \times n(d+1)}$ in $\mathbf{b} \in \mathbb{R}^M$ pa predstavljata linearne omejitve. Najprej bomo pokazali, kako izračunamo matriko $\mathbf{Q}$, nato pa še, kako izračunamo matriko $\mathbf{A}$ in vektor $\mathbf{b}$. Bistvenega pomena pri tej izpeljavi je, da so elementi matrik $\mathbf{Q}$ in $\mathbf{A}$ zvezno odvisni od vmesnih časov $t_i$.
+kjer je $\mathbf{a} \in \mathbb{R}^{n (d+1)}$ optimizacijski vektor in predstavlja koeficiente polinomskih zlepkov, $\mathbf{Q} \in \mathbb{R}^{n(d+1) \times n(d+1)}$ je simetrična in pozitivno definitna matrika, $\mathbf{A} \in \mathbb{R}^{M \times n(d+1)}$ in $\mathbf{b} \in \mathbb{R}^M$ pa predstavljata linearne omejitve. Najprej bomo pokazali, kako izračunamo matriko $\mathbf{Q}$, nato pa še, kako izračunamo matriko $\mathbf{A}$ in vektor $\mathbf{b}$. Bistvenega pomena pri tej izpeljavi je, da so elementi matrik $\mathbf{Q}$ in $\mathbf{A}$ zvezno odvisni od vmesnih časov $t_i$ \cite{carlone2020vnav}.
 
 \subsubsection{Izračun matrike $\mathbf{Q}$}
 Matriko $\mathbf{Q}$ izračunamo tako, da ločeno prevedemo posamezen integral $\int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ na matrično enačbo $\mathbf{a}_i^\top \mathbf{Q}_i \mathbf{a}_i$, kjer je $\mathbf{a}_i$ vektor koeficientov $i$-tega polinoma. Celotno vsoto $\sum_{i=1}^n \int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ pa nato predstavimo kot bločno matriko
@@ -593,7 +593,7 @@ Opazimo lahko, da v primeru, kjer neenakostnih omejitem ni, Slaterjev pogoj velj
 
 \subsubsection{\acs{KKT} pogoji \acs{QP}}
 
-V primeru našega optimizacijskega problema, kjer imamo kvadratično cenovno funkcijo in enakostne omejitve, lahko privzamemo Slaterjev pogoj, saj nimamo neenakostnih omejitev, \ac{KKT} pa se zreducirajo na:
+V primeru našega optimizacijskega problema, kjer imamo kvadratno cenovno funkcijo in enakostne omejitve, lahko privzamemo Slaterjev pogoj, saj nimamo neenakostnih omejitev, \ac{KKT} pa se zreducirajo na:
 
 \begin{equation}
     \begin{aligned}
@@ -685,7 +685,7 @@ Naj velja enačba $\kmat\mathbf{y}^* - \mathbf{c} = \mathbf{0}$, kjer je $\mathb
 \end{izrek}
 
 \begin{dokaz}
-Pokazati moramo, da je Jacobijeva matrika parcialnih odvodov enačbe $K\mathbf{y}^* - \mathbf{c}$ glede na $\mathbf{y}^*$ obrnljiva. Ni težko videti, da je Jacobijeva matrika parcialnih odvodov kar \acs{KKT} matrika $\mathbf{K}$. Spomnimo, matrika $\kmat$ ima bločno strukturo in je definirana v enačbi~\eqref{eq:kkt_matrix}. Ker je $\mathbf{Q}$ pozitivno definitna in ker ima $\mathbf{A}$ poln rang, je matrika $\mathbf{K}$ obrnljiva (dokaz za to je podan v \cite{EPFL_Part5}). S tem je pogoj \acl{IIF} izpolnjen in sledi obstoj in enoličnost gladkih funkcij $\yimplicit$, $\aimplicit$ in $\muimplicit$.
+Pokazati moramo, da je Jacobijeva matrika parcialnih odvodov enačbe \newline $\kmat \mathbf{y}^* - \mathbf{c}$ glede na $\mathbf{y}^*$ obrnljiva. Ni težko videti, da je Jacobijeva matrika parcialnih odvodov kar \acs{KKT} matrika $\mathbf{K}$. Spomnimo, matrika $\kmat$ ima bločno strukturo in je definirana v enačbi~\eqref{eq:kkt_matrix}. Ker je $\mathbf{Q}$ pozitivno definitna in ker ima $\mathbf{A}$ poln rang, je matrika $\mathbf{K}$ obrnljiva (dokaz za to je podan v \cite{EPFL_Part5}). S tem je pogoj \acl{IIF} izpolnjen in sledi obstoj in enoličnost gladkih funkcij $\yimplicit$, $\aimplicit$ in $\muimplicit$.
 \end{dokaz}
 
 \subsubsection{Računanje gradienta}
@@ -744,6 +744,7 @@ V prejšnjih podpoglavjih smo predstavili, kako izračunati gradient in Hessovo 
 
 Gradient projiciramo na hiperravnino $\mathbf{1}^\top \mathbf{t} = T$ tako, da od gradienta odštejemo komponento v smeri normalnega vektorja hiperravnine. Normalni vektor hiperravnine $\mathbf{1}^\top \mathbf{t} = T$ je $\mathbf{n} = \mathbf{1}$, zato lahko projicirani gradient izračunamo kot:
 \begin{equation}
+    \label{eq:projection}
     \nabla F_{proj}(\tvec) = \nabla F(\tvec) - \frac{\nabla F(\tvec)^\top \mathbf{1}}{\mathbf{1}^\top \mathbf{1}} \mathbf{1} = \nabla F(\tvec) - \frac{1}{n} \sum_{i=1}^n \partial_{t_i} F(\tvec) = \nabla F(\tvec) - \Bar{\nabla F(\tvec)}
 \end{equation}
 
@@ -826,7 +827,7 @@ V implementaciji smo ta algoritem optimizairali tako, da smo s pomočjo vektoriz
     \STATE Izračunaj normaliziran projicirani gradientni korak $\nabla \mathbf{\tilde{p}}(\tvec_k)$.
     \STATE Reši \ac{KKT} sistem~\eqref{eq:upper_system} in izlušči Newtonov korak $\mathbf{p}_k$.
     \STATE $\alpha \gets 1$
-    \WHILE {$F(\tvec_k + \alpha \mathbf{p}_k) > F(\tvec_k) + c \alpha \nabla F(\tvec_k)^\top \mathbf{p}_k$ in $F(\tvec_k + \alpha \mathbf{\tilde{p}}_k) > F(\tvec_k) + c \alpha \nabla F(\tvec_k)^\top \mathbf{\tilde{p}}_k$ (Armijo\_Goldsteinov pogoj)}
+    \WHILE {$F(\tvec_k + \alpha \mathbf{p}_k) > F(\tvec_k) + c \alpha \nabla F(\tvec_k)^\top \mathbf{p}_k$ in $F(\tvec_k + \alpha \mathbf{\tilde{p}}_k) > F(\tvec_k) + c \alpha \nabla F(\tvec_k)^\top \mathbf{\tilde{p}}_k$ (Armijo-Goldsteinov pogoj)}
         \STATE $\alpha \gets \tau \alpha$
     \ENDWHILE
     \IF {$F(\tvec_k + \alpha \mathbf{p}_k) < F(\tvec_k + \alpha \mathbf{\tilde{p}}_k)$}
@@ -1069,12 +1070,12 @@ V primeru $i \neq j$ pa člena s $\partial_{t_it_j}\qmat$ in $\partial_{t_it_j}\
     \end{aligned}
 \end{equation}
 
-Vidimo lahko, da sama konstrukcija vektorjev $\mathbf{B}_i$ in $\mathbf{B}_{ij}$ zahteva $O(1)$ operacij glede na $n$. V dodatku \ref{app:implementation} pokažemo, kako v primeru gradienta lahko vektoriziramo opisani proces in namesto računanja v zanki po komponentah izračunamo vse $\mathbf{B}_i$ naenkrat s pomočjo tenzorjev. Enako lahko storimo tudi za Hessovo matriko, vendar v tem primeru bralca napotimo na implementacijo.
+Vidimo lahko, da sama konstrukcija vektorjev $\mathbf{B}_i$ in $\mathbf{B}_{ij}$ zahteva $O(1)$ operacij glede na $n$, saj imajo bloki kosntantno velikost ($\qmat_i \in \mathbb{R}^{(d+1)\times(d+1)}$ in $\amat_i \in \mathbb{R}^{K+2 \times (d+1)}$). V dodatku \ref{app:implementation} pokažemo, kako v primeru gradienta lahko vektoriziramo opisani proces in namesto računanja v zanki po komponentah izračunamo vse $\mathbf{B}_i$ naenkrat s pomočjo tenzorjev. Enako lahko storimo tudi za Hessovo matriko, vendar v tem primeru bralca napotimo na implementacijo.
 
 \subsubsection{Pasovna struktura Hessove matrike}
 \label{sec:hess_band}
 
-Newtonova metoda v splošnem zahteva izračun in faktorizacijo Hessove matrike, kar je lahko za probleme z veliko spremenljivkami računsko zahtevno; Če računamo vsak parcialni odvod drugega reda cenovne funkcije $F(\tvec)$, potem je število parcialnih odvodov drugega reda $O(n^2)$, kjer $n$ je število segmentov trajektorije. V našem primeru pa se izkaže, da s tem, da če izračunamo samo diagonalo in nekaj pasov okoli nje, dosežemo zelo dober približek Hessove matrike, s tem pa tudi znižamo časovno zahtevnost na $O(n)$. Na sliki \ref{fig:hess_band} je prikazana Hessova matrika na primeru z $n=39$ segmenti trajektorije. Vidimo lahko, da so neničelni elementi matrike skoncentrirani v pasovih okoli diagonale. V podpoglavju~\ref{sec:bands_analysis} bomo pokazali, da je uporaba samo diagonale in 4 pasov pod in nad diagonalo dovolj za doseganje dobre konvergence optimizacijskega algoritma, hkrati pa nam omogoči pohitritev algoritma.
+Newtonova metoda v splošnem zahteva izračun in faktorizacijo Hessove matrike, kar je lahko za probleme z veliko spremenljivkami računsko zahtevno; Če računamo vsak parcialni odvod drugega reda cenovne funkcije $F(\tvec)$, potem je število parcialnih odvodov drugega reda $n^2$, kjer je $n$ število segmentov trajektorije. V našem primeru pa se izkaže, da s tem, da če izračunamo samo diagonalo in nekaj pasov okoli nje, dosežemo zelo dober približek Hessove matrike, s tem pa tudi znižamo časovno zahtevnost na $O(n)$. Na sliki \ref{fig:hess_band} je prikazana Hessova matrika na primeru z $n=39$ segmenti trajektorije. Vidimo lahko, da so neničelni elementi matrike skoncentrirani v pasovih okoli diagonale. V podpoglavju~\ref{sec:bands_analysis} bomo pokazali, da je uporaba samo diagonale in 4 oziroma 5 pasov pod in nad diagonalo dovolj za doseganje dobre konvergence optimizacijskega algoritma, hkrati pa nam omogoči pohitritev algoritma.
 
 \begin{figure}
     \centering
@@ -1094,7 +1095,7 @@ V tem poglavju predstavimo rezultate eksperimentov, ki smo jih izvedli za oceno 
 Naša metoda je implementirana v programskem jeziku Python in je dostopna na povezavi \href{https://github.com/maticpokorn/trajectory_optimization}{\texttt{github.com/maticpokorn/trajectory\_optimization}}. V implementaciji se često zanašamo na operacije z redkimi matrikami za doseganje višje hitrosti in zato uprabljamo modul \texttt{scipy.sparse} knjižnice SciPy \cite{2020SciPy-NMeth}. Konkretno se poslužujemo metode SuperLU za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{superlu1997superlu}. Za reševanje QP uporabljamo knjižnico OSQP \cite{osqp}. Implemetacijo naše metode sta omogočili še knjižnici NumPy \cite{harris2020array} in Matplotlib \cite{Hunter:2007}.
 
 \paragraph{Primer uporabe}
-Tukaj prikažemo preprost primer uporabe naše metode v Python-u. Spodaj je prikazana koda, kjer definiramo problem z $11$ vmesnimi točkami in skupnim časom trajektorije $T=10$. Nato pokličemo metodo, ki implementira algoritem~\ref{alg:newton}. V vrstici \texttt{solver = ...} določimo stopnjo polinoma, kateri odvod želimo optimizirati, stopnjo gladkosti trajektorije in dimenzionalnost prostora, v katerem se nahajajo točke.
+Tukaj prikažemo preprost primer uporabe naše metode \newline v Python-u. Spodaj je prikazana koda, kjer definiramo problem z $11$ vmesnimi točkami in skupnim časom trajektorije $T=10$. Nato pokličemo metodo, ki implementira algoritem~\ref{alg:newton}. V vrstici \texttt{solver = ...} določimo stopnjo polinoma, kateri odvod želimo optimizirati, stopnjo gladkosti trajektorije in dimenzionalnost prostora, v katerem se nahajajo točke.
 
 \begin{verbatim}
 from solver import NoTimestampSolver
@@ -1253,7 +1254,7 @@ Pričakovano se čas izračuna povečuje z večjim številom segmentov trajektor
 
 V tem magistrskem delu smo predstavili Newtonovo metodo za optimizacijo trajektorij za diferencialno ploščate sisteme. Pokazali smo, kako minimizacijo funkcionala z omejitvami pretvorimo v dvonivojski optimizacijski problem, kjer ima nižjenivojski problem strukturo \ac{QP} z enakostnimi omejitvami. S pomočjo \ac{IIF} smo pokazali, da lahko analitično izračunamo gradient in Hessovo matriko cenovne funkcije zgornjenivojskega problema. Z eksperimenti smo pokazali, da Newtonova metoda potrebuje manj iteracij za konvergenco kot metoda, ki uporablja samo gradient ali metoda, ki odvode izračuna numerično. Kljub temu v večini primerov Newtonova metoda v realnem času ni hitrejša od gradientnega spusta. Opisali smo tudi nekaj pristopov za pohitritev algoritma, ki izrabljajo strukturo problema.
 
-Ostaja mnogo poti za izboljšavo. Glavni izmed njih je vključitev neenakostnih omejitev v \ac{QP}, kar bi omogočilo načrtovanje trajektorij z izogibanjem preprekam in omejitev maksimalnih hitrosti in pospeškov kvadrotorjev. To bi sicer lahko pripeljalo do težav pri veljavnosti \ac{IIF}, vendar v \cite{sun2021fast, amos2017optnet} že ponudijo rešitve. Dodatno bi bilo zanimivo raziskati vključitev nelinearnih omejitev, npr. omejitev stožca drugega reda, ki bi bile koristne za omejitve hitrosti in pospeška; za to bi bilo treba uporabiti algoritme za semidiefinitno programiranje, kot je npr. Clarabel \cite{goulart2024clarabel} oz. CuClarabel \cite{chen2024cuclarabel}, ki deluje z grafičnimi procesnimi enotami. Nadalje, implementacija v nižjenivojskem jeziku, kot je C++, bi z veliko verjetnostjo bistveno izboljšala hitrost. Normalizacija časovnih intervalov, kot so jo predlagali v \cite{mellinger2011minimum}, bi pripomogla k večji stabilnosti metode. Uporaba metode ničelnega prostora za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{rees2014null} bi lahko pripomogla k dodatni pohitritvi. Na strani implementacije bi bilo koristno dodati tudi nastavljive parametre za npr. začetne/končne odvode trajektorije. Še en zanimiv pristop k boljši hitrosti bi bil razvoj metode globokega učenja za aproksimacijo gradienta in Hessove matrike oz. optimizacijskega koraka; v preteklosti se je tak pristop izkazal za zelo učinkovit pri pospeševanju optimizacijskih algoritmov \cite{andrychowicz2016learning}.
+Ostaja mnogo poti za izboljšavo. Glavni izmed njih je vključitev neenakostnih omejitev v \ac{QP}, kar bi omogočilo načrtovanje trajektorij z izogibanjem preprekam in omejitev maksimalnih hitrosti in pospeškov kvadrotorjev. To bi sicer lahko pripeljalo do težav pri veljavnosti \ac{IIF}, vendar v \cite{sun2021fast, amos2017optnet} že ponudijo rešitve. Dodatno bi bilo zanimivo raziskati vključitev nelinearnih omejitev, npr. omejitev stožca drugega reda, ki bi bile koristne za omejitve hitrosti in pospeška; za to bi bilo treba uporabiti algoritme za semidiefinitno programiranje, kot je npr. Clarabel \cite{goulart2024clarabel} oz. CuClarabel \cite{chen2024cuclarabel}, ki deluje z grafičnimi procesnimi enotami. Nadalje, implementacija v nižjenivojskem jeziku, kot je C++, bi z veliko verjetnostjo bistveno izboljšala hitrost. Normalizacija časovnih intervalov, kot so jo predlagali v \cite{mellinger2011minimum}, bi pripomogla k večji stabilnosti metode. Uporaba metode ničelnega prostora za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{rees2014null} bi lahko pripomogla k dodatni pohitritvi. Na strani implementacije bi bilo koristno dodati tudi nastavljive parametre za npr. začetne/končne odvode trajektorije. Še en zanimiv pristop k boljši hitrosti bi bil razvoj metode globokega učenja za aproksimacijo gradienta in Hessove matrike oz. optimizacijskega koraka; v preteklosti se je tak pristop izkazal za zelo učinkovit pri pospeševanju optimizacijskih algoritmov \cite{andrychowicz2016learning}. Na koncu bi bilo zanimivo raziskati, ali se podobna metoda lahko uporabi tudi v problemih na drugih področjih.
 
 
 %\subsection{Sklicevanje in citiranje}
@@ -1495,36 +1496,36 @@ Za naš primer pri $t_1 = 1, t_2 = 2$ lahko izračunamo numerično vrednost parc
 \begin{equation}
 \partial_{t_1} \aimplicit_x(1, 2) = 
 \begin{bmatrix}
-\textcolor{block1color}{0.00000} \\
-\textcolor{block1color}{0.00000} \\
-\textcolor{block1color}{0.00000} \\
-\textcolor{block1color}{0.44358} \\
-\textcolor{block1color}{-0.77698} \\
-\textcolor{block2color}{0.00000} \\
-\textcolor{block2color}{0.22201} \\
-\textcolor{block2color}{-0.33302} \\
-\textcolor{block2color}{0.16651} \\
-\textcolor{block2color}{-0.02775}
+\textcolor{block1color}{0,0000} \\
+\textcolor{block1color}{0,0000} \\
+\textcolor{block1color}{0,0000} \\
+\textcolor{block1color}{0,4436} \\
+\textcolor{block1color}{-0,7770} \\
+\textcolor{block2color}{0,0000} \\
+\textcolor{block2color}{0.2220} \\
+\textcolor{block2color}{-0,3330} \\
+\textcolor{block2color}{0,1665} \\
+\textcolor{block2color}{-0,0278}
 \end{bmatrix}, \quad
 \partial_{t_1} \muimplicit_x(1, 2) = 
 \begin{bmatrix}
-\textcolor{block3color}{123.90191} \\
-\textcolor{block3color}{56.61241} \\
-\textcolor{block3color}{4.99130} \\
-\textcolor{block4color}{-123.90191} \\
-\textcolor{block4color}{19.31748} \\
-\textcolor{block4color}{5.66212} \\
-\textcolor{block4color}{-143.88543} \\
-\textcolor{block6color}{19.98352} \\
-\textcolor{block6color}{-20.64956} \\
-\textcolor{block6color}{6.99419}
+\textcolor{block3color}{123,9019} \\
+\textcolor{block3color}{56,6124} \\
+\textcolor{block3color}{4,9913} \\
+\textcolor{block4color}{-123,9019} \\
+\textcolor{block4color}{19,3175} \\
+\textcolor{block4color}{5,6621} \\
+\textcolor{block4color}{-143,8854} \\
+\textcolor{block6color}{19,9835} \\
+\textcolor{block6color}{-20,6496} \\
+\textcolor{block6color}{6,9942}
 \end{bmatrix}
 \end{equation}
 
 S pomočjo enačbe \eqref{eq:grad} lahko sedaj izračunamo komponento gradienta glede na $t_1$:
 \begin{equation}
     \label{eq:grad_t1}
-    \partial_{t_1} F_x(1, 2) = \aimplicit_x(1, 2)^\top \qmat (\partial_{t_1} \aimplicit_x(1, 2)) + \frac{1}{2} \aimplicit_x(1, 2)^\top (\partial_{t_1} \qmat(1, 2)) \aimplicit_x(1, 2) = -9,98352669
+    \partial_{t_1} F_x(1, 2) = \aimplicit_x(1, 2)^\top \qmat (\partial_{t_1} \aimplicit_x(1, 2)) + \frac{1}{2} \aimplicit_x(1, 2)^\top (\partial_{t_1} \qmat(1, 2)) \aimplicit_x(1, 2) = -9,9835
 \end{equation}
 
 Na analogen način lahko izračunamo tudi $\partial_{t_2} F_x$, $\partial_{t_1} F_y$ in $\partial_{t_2} F_y$, s čimer dobimo celoten gradient $\nabla F(\tvec)$:
@@ -1544,20 +1545,22 @@ Opazimo lahko, da sta obe komponenti gradienta negativni, kar pomeni, da bi se s
 
 Določimo $T = 3$, kar pomeni, da imamo omejitev $t_1 + t_2 = 3$. Zato želimo gradient $\nabla F(\tvec)$ projicirati na hiperravnino, določeno z normalnim vektorjem $\mathbf{1} = (1, 1)$. Projekcija gradienta $\nabla F(\tvec)$ na to hiperravnino se izračuna po formuli \eqref{eq:projection}, njen rezultat pa je:
 \begin{equation}
-\nabla_{\text{proj}} F(1, 2) = (-182.45414851, 182.45414851)
+\nabla_{\text{proj}} F(1, 2) = (-182,4541, 182,4541)
 \end{equation}
 
 V implementaciji ta gradient še normaliziramo, da se izognemo prevelikim korakom, in izvedemo gradientni korak z velikostjo $\alpha = 1$:
 \begin{equation}
-    \tvec_1 = \tvec_0 - \alpha \frac{\nabla_{\text{proj}} F(\tvec_0)}{\|\nabla_{\text{proj}} F(\tvec_0)\|} = (1, 2) - (-0.70710678,  0.70710678) = (1.70710678, 1.29289322)
+    \tvec_1 = \tvec_0 - \alpha \frac{\nabla_{\text{proj}} F(\tvec_0)}{\|\nabla_{\text{proj}} F(\tvec_0)\|} = (1, 2) - (-0,7071,  0,7071) = (1,7071, 1,2929)
 \end{equation}
+
+$\tvec_1$ je nova točka v prostoru časov, ki leži na hiperravnini $t_1 + t_2 = 3$. Sedaj lahko postopek ponavljamo dokler želen kriterij za konvergenco ni izpolnjen. Na sliki~\ref{fig:2segment_bo} je prikazana trajektorija pri točki $\tvec^*$, ki je točka, kjer $F$ doseže lokalni minimum. 
 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{images/trajectory_2d_bo.pdf}
-    \caption{Projekcija gradienta na hiperravnino $t_1 + t_2 = T$.}
+    \caption{Trajektorija skozi tri vmesne točke pri časovnem vektorju $\tvec^*$.}
     \label{fig:2segment_bo}
 \end{figure}
 
@@ -1566,54 +1569,37 @@ V implementaciji ta gradient še normaliziramo, da se izognemo prevelikim korako
 
 \section{Podrobnosti implementacije}
 \label{app:implementation}
-V tem dodatku se posvetimo podrobnostim implementacije hitrega izračuna analitičnega gradienta in Hessove matrike cenovne funkcije $F(\tvec)$. V prejšnjih poglavjih smo zavoljo jasnosti odvode različnih funkcij in matrik opisovali po komponentah (na primer, $\partial_{t_i} F$, $\partial_{t_i t_j} \aimplicit$, $\partial_{t_it_i} \qmat$, ...), vendar pa je v implementaciji smiselno uporabiti vektorizacijo in vektorske operacije, da se izognemo zankam in nepotrebnemu računanju z ničelnimi bloki. V tem dodatku bomo opisali, kako smo z vektorizacijo izračunali Hessovo matriko $\nabla^2 F(\tvec)$ in gradient $\nabla F(\tvec)$. Najprej predstavimo, kako smo prestrukturirali vhodne komponente algoritma~\ref{alg:gradhess} v tenzorje brez ničelnih blokov, nato pa s pomočjo Einsteinove sumacijske notacije opišemo, kako smo izračunali gradient in Hessovo matriko. Najprej pa na kratko predstavimo Einsteinovo sumacijsko notacijo.
+V tem dodatku se posvetimo podrobnostim implementacije hitrega izračuna analitičnega gradienta in Hessove matrike cenovne funkcije $F(\tvec)$. V prejšnjih poglavjih smo zavoljo jasnosti odvode različnih funkcij in matrik opisovali po komponentah (na primer, $\partial_{t_i} F$, $\partial_{t_i t_j} \aimplicit$, $\partial_{t_it_i} \qmat$, ...), vendar pa je v implementaciji smiselno uporabiti vektorizacijo in vektorske operacije, da se izognemo zankam in nepotrebnemu računanju z ničelnimi bloki. V tem dodatku bomo opisali, kako smo z vektorizacijo izračunali Hessovo matriko $\nabla^2 F(\tvec)$ in gradient $\nabla F(\tvec)$. Najprej predstavimo, kako smo prestrukturirali vhodne komponente algoritma~\ref{alg:gradhess} v tenzorje brez ničelnih blokov, nato pa s pomočjo tenzorjev in tenzorskih operacij opišemo, kako smo izračunali gradient in Hessovo matriko. Najprej pa na kratko predstavimo tenzorsko notacijo.
 
-\subsection{Einsteinova sumacijska notacija}
+\subsection{Notacija}
 
-Einsteinova sumacijska notacija (Einstein summation notation) je konvencija v tenzorskem računu, ki omogoča bolj kompakten zapis sumacij. Osnovno pravilo je, da če se isti indeks pojavi dvakrat v produktu -- enkrat kot spodnji in enkrat kot zgornji indeks -- ta indeks implicitno indicira sumacijo čez vse vrednosti tega indeksa.
-
-Formalno: če imamo izraz oblike $a_i b^i$, to pomeni $\sum_{i} a_i b^i$.
-
-\textbf{Primeri:}
-\begin{itemize}
-    \item Skalarni produkt: $\mathbf{u} \cdot \mathbf{v} = u^i v_i = \sum_{i=1}^{n} u^i v_i$
-    \item Matrično-vektorski produkt: $(\mathbf{A}\mathbf{x})_i = A_{ij} x^j = \sum_{j=1}^{n} A_{ij} x^j$
-    \item Matrični produkt: $(\mathbf{A}\mathbf{B})_{ij} = A_{ik} B_{kj} = \sum_{k=1}^{n} A_{ik} B_{kj}$
-    \item Sled matrike: $\text{tr}(\mathbf{A}) = A_{ii} = \sum_{i=1}^{n} A_{ii}$
-\end{itemize}
-
-V tem dodatku uporabljamo Einsteinovo notacijo za opis vektoriziranih operacij pri izračunu gradienta in Hessove matrike. To nam omogoča, da kompaktno zapišemo operacije na tenzorjih, ki v implementaciji ustrezajo vektorskim operacijam brez eksplicitnih zank.
+V tem dodatku uporabljamo posebno notacijo za opis vektoriziranih operacij pri izračunu gradienta $\nabla F$. To nam omogoča, da kompaktno zapišemo operacije na tenzorjih, ki v implementaciji ustrezajo vektorskim operacijam brez eksplicitnih zank. Zato uvedemo nov simbol za sledečo operacijo: imamo tridimenzionalni tenzor $\mathcal{T} \in \mathbb{R}^{L_1 \times L_2 \times L_3}$ in matriko $\mathbf{M} \in \mathbb{R}^{L_3 \times L_2}$, želimo pa izračunati matriko $\mathbf{R} \in \mathbb{R}^{L_1 \times L_2}$, kjer je $R_i = \mathcal{T}_i M_i$. To operacijo označimo z $\mathcal{T} \times_1 \mathbf{M}$, kjer $\times_1$ označuje množenje po prvi dimenziji tenzorja \cite{kolda2009tensor}. 
 
 \subsection{Vektorizacija vhodnih podatkov}
 Kot vhodne podatke algoritma~\ref{alg:gradhess} imamo matriko $\qmat(\tvec)$, matriko $\amat(\tvec)$, vektorja $\avec^*$ in $\muvec^*$, nato pa izračunamo tudi parcialne odvode $\partial_{t_i}\qmat$, $\partial_{t_i} \amat$, $\partial_{t_it_j}\qmat$ in $\partial_{t_it_j}\amat$. Vse te matrike imajo redko strukturo, saj so sestavljene iz blokov, kjer je večina blokov ničelnih. V implementaciji smo te matrike prestrukturirali v tenzorje, kjer so shranjeni le neničelni bloki, kar nam omogoča, da z vektorskimi operacijami izračunamo vse parcialne odvode in komponente gradienta in Hessove matrike v enem klicu funkcije, brez zank po komponentah. Ti tenzorji so:
 
 \begin{itemize}
-    \item $\mathcal{Q}$: tenzor velikosti $(n, d+1, d+1)$, kjer $n$ je število segmentov trajektorije in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke matrike $\qmat$. Velja $\mathcal{Q}_i = \qmat_i$ za $i=1,\ldots,n$.
     \item $\mathcal{Q'}$: tenzor velikosti $(n, d+1, d+1)$, kjer $n$ je število segmentov trajektorije in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke parcialnih odvodov matrike $\qmat$. Velja $\mathcal{Q'}_i = \partial_{t_i} \qmat_i$ za $i=1,\ldots,n$.
-    \item $\mathcal{A'}$: tenzor velikosti $(n, q+2, d+1)$, kjer $n$ je število segmentov trajektorije, $q$ je stopnja minimiziranega odvoda in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke parcialnih odvodov matrike $\amat$. Velja $\mathcal{A'}_i = \partial_{t_i} \amat_i$ za $i=1,\ldots,n$.\footnotemark[1]
-    \item $\mathcal{Q''}$: tenzor velikosti $(n, d+1, d+1)$, kjer $n$ je število segmentov trajektorije in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke parcialnih odvodov drugega reda matrike $\qmat$. Velja $\mathcal{Q''}_i = \partial_{t_it_i} \qmat_i$ za $i=1,\ldots,n$.
-    \item $\mathcal{A''}$: tenzor velikosti $(n, q+2, d+1)$, kjer $n$ je število segmentov trajektorije, $q$ je stopnja minimiziranega odvoda in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke parcialnih odvodov drugega reda matrike $\amat$. Velja $\mathcal{A''}_i = \partial_{t_it_i} \amat_i$ za $i=1,\ldots,n$.\footnotemark[1]
-    \item $\mathit{a}$: tenzor velikosti $(n, d+1)$, kjer $n$ je število segmentov trajektorije in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke vektorja $\avec^*$, kjer velja $\mathit{a}_i = \avec^*_i$ za $i=1,\ldots,n$.
-    \item $\boldsymbol{\mu}$: tenzor velikosti $(n, q+2)$, kjer $n$ je število segmentov trajektorije in $q$ je stopnja minimiziranega odvoda. Ta tenzor vsebuje neničelne bloke vektorja $\muvec^*$, kjer velja $\boldsymbol{\mu}_i = \muvec^*_i$ za $i=1,\ldots,n$.
-    \item $\mathit{a}'$: tenzor velikosti $(n, n, d+1)$, kjer $n$ je število segmentov trajektorije in $d$ je stopnja polinoma. Ta tenzor vsebuje parcialne odvode vektorja $\avec^*$, kjer velja $\mathit{a}'_{ij} = \partial_{t_i} \avec^*_j$ za $i,j=1,\ldots,n$.
-    \item $\boldsymbol{\mu}'$: tenzor velikosti $(n, n, q+2)$, kjer $n$ je število segmentov trajektorije in $q$ je stopnja minimiziranega odvoda. Ta tenzor vsebuje parcialne odvode vektorja $\muvec^*$, kjer velja $\boldsymbol{\mu}'_{ij} = \partial_{t_i} \muvec^*_j$ za $i,j=1,\ldots,n$.
+    \item $\mathcal{A'}$: tenzor velikosti $(n, K+2, d+1)$, kjer $n$ je število segmentov trajektorije, $K$ je stopnja zveznosti in $d$ je stopnja polinoma. Ta tenzor vsebuje neničelne bloke parcialnih odvodov matrike $\amat$. Velja $\mathcal{A'}_i = \partial_{t_i} \amat_i$ za $i=1,\ldots,n$.\footnotemark[1]
+    \item $\mathbf{X}$: matrika velikosti $(n, d+1)$, kjer je $n$ število segmentov trajektorije in $d$ je stopnja polinoma. Ta matrika vsebuje neničelne bloke vektorja $\avec^*$, kjer velja $\mathbf{X}_i = \avec^*_i$ za $i=1,\ldots,n$.
+    \item $\mathbf{Y}$: matrika velikosti $(n, K+2)$, kjer je $n$ število segmentov trajektorije in $K$ je stopnja zveznosti. Ta matrika vsebuje neničelne bloke vektorja $\muvec^*$, kjer velja $\mathbf{Y}_i = \muvec^*_i$ za $i=1,\ldots,n$.
 \end{itemize}
 
-\footnotetext[1]{Striktno gledano imata bloka $\partial_{t_n} A_n$ in $\partial_{t_n t_n} A_n$ eno vrstico manj od ostalih blokov ($q+1$ vrstic, saj imamo pri ostalih blokih dodatno omejitev, ki določa skladanje končne koordinate z začetno v naslednjem segmentu), vendar pa smo v implementaciji dodali dodatno ničelno vrstico, da so vsi bloki enake velikosti in da lahko uporabimo vektorske operacije brez skrbi o različnih velikostih blokov.}
+\footnotetext[1]{Striktno gledano imata bloka $\partial_{t_n} A_n$ in $\partial_{t_n t_n} A_n$ eno vrstico manj od ostalih blokov ($K+1$ vrstic, saj imamo pri ostalih blokih dodatno omejitev, ki določa skladanje končne koordinate z začetno v naslednjem segmentu), vendar pa smo v implementaciji dodali dodatno ničelno vrstico, da so vsi bloki enake velikosti in da lahko uporabimo vektorske operacije brez skrbi o različnih velikostih blokov.}
 
 \subsection{Izračun gradienta}
 
-Sedaj lahko z Einsteinovo sumacijsko notacijo zapišemo sledečo matriko:
+Sedaj lahko z tenzorsko notacijo zapišemo sledečo matriko:
 
 \begin{equation}
 \mathbf{B}_{grad} = - \begin{bmatrix}
-    \text{blkdiag}\left(\mathcal{Q'}_{ij} \mathit{a}_j + \mathcal{A'}_{kij} \boldsymbol{\mu}_k\right) \\
+    \text{blkdiag}\left(\mathcal{Q'} \times_1 \mathbf{X}^T + \mathcal{A'} \times_1 \mathbf{Y}^T\right) \\
     \mathbf{0} \\
-    \text{blkdiag}\left(\mathcal{A'}_{ikj} \mathit{a}_j\right),
+    \text{blkdiag}\left(\mathcal{A'} \times_1 \mathbf{X}^T\right)
 \end{bmatrix}
 \end{equation}
 
-kjer $i$-ti stolpec matrike $\mathbf{B}_{grad}$ predstavlja desno stran linearnega sistema, da izračunamo $\partial_{t_i} \yimplicit$. $\mathbf{0}$ je ničelna matrika velikosti $q+1\times n$. Simbol $\text{blkdiag}$ označuje operacijo bločne diagonalizacije iz tridimenzionalnega tenzorja dimenzij $k \times l \times m$ v bločno diagonalno matriko velikosti $k l \times k m$, kjer je $i$-ti element tenzorja (po prvi dimenziji) $i$-ti diagonalni blok v matriki. Z izračunom matrike $\mathbf{B}_{grad}$ se tako izognemo zankam po komponentah, kot smo to opisali v podpoglavju~\ref{sec:rhs}, in povečamo učinkovitost izračuna gradienta. Ko imamo matriko $\mathbf{B}_{grad}$, lahko rešimo sledeči sistem enačb:
+, kjer $i$-ti stolpec matrike $\mathbf{B}_{grad}$ predstavlja desno stran linearnega sistema, da izračunamo $\partial_{t_i} \yimplicit$. $\mathbf{0}$ je ničelna matrika velikosti $(K+1)\times n$. Simbol $\text{blkdiag}$ označuje operacijo bločne diagonalizacije iz tridimenzionalnega tenzorja dimenzij $k \times l \times m$ v bločno diagonalno matriko velikosti $k l \times k m$, kjer je $i$-ti element tenzorja (po prvi dimenziji) $i$-ti diagonalni blok v matriki. Z izračunom matrike $\mathbf{B}_{grad}$ se tako izognemo zankam po komponentah, kot smo to opisali v podpoglavju~\ref{sec:rhs}, in povečamo učinkovitost izračuna gradienta. Ko imamo matriko $\mathbf{B}_{grad}$, lahko rešimo sledeči sistem enačb:
 
 \begin{equation}
 \kmat \partial\yimplicit = \mathbf{B}_{grad},

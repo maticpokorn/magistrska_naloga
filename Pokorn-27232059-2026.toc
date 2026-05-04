@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.1}Diferencialno ploščati sistemi}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Optimizacija trajektorij brezpilotnikov}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Dvonivojska optimizacija}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Newtonova metoda}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Newtonova metoda}{5}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Opis metode}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Problem s podanimi časi segmentov}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Prevedba na \acs {QP}}{7}{subsection.3.2}%
@@ -19,11 +19,11 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Izrek o implicitni funkciji}{13}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Računanje gradienta}{14}{subsubsection.3.4.3}%
 \contentsline {subsubsection}{\numberline {3.4.4}Računanje Hessove matrike}{14}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Newtonova metoda in optimizacijski algoritem}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Newtonova metoda in optimizacijski algoritem}{14}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Gradientni korak}{15}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Newtonov korak}{15}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}Optimizacijski algoritem}{15}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Pohitritve}{18}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Pohitritve}{15}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Faktorizacija KKT matrike $\mathbf {K}$}{18}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Računanje desne strani linearnih sistemov enačb}{18}{subsubsection.3.6.2}%
 \contentsline {subsubsection}{\numberline {3.6.3}Pasovna struktura Hessove matrike}{21}{subsubsection.3.6.3}%
@@ -36,9 +36,10 @@
 \contentsline {section}{\numberline {5}Zaključek}{30}{section.5}%
 \contentsline {section}{\numberline {A}Primer}{33}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}QP}{33}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Izračun gradienta}{34}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.2}Izračun gradienta}{35}{subsection.A.2}%
 \contentsline {subsection}{\numberline {A.3}Projekcija gradienta in gradientni korak}{37}{subsection.A.3}%
-\contentsline {section}{\numberline {B}Podrobnosti implementacije}{37}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Einsteinova sumacijska notacija}{38}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Vektorizacija vhodnih podatkov}{38}{subsection.B.2}%
-\contentsline {subsection}{\numberline {B.3}Izračun gradienta}{40}{subsection.B.3}%
+\contentsline {section}{\numberline {B}Podrobnosti implementacije}{38}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Notacija}{38}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Vektorizacija vhodnih podatkov}{39}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Izračun gradienta}{39}{subsection.B.3}%
+\contentsline {section}{Literatura}{41}{section*.20}%

@@ -2423,35 +2423,37 @@
     <bcf:citekey order="35" intorder="1">newton1736method</bcf:citekey>
     <bcf:citekey order="35" intorder="2">boyd2004convex</bcf:citekey>
     <bcf:citekey order="36" intorder="1">dyro2022second</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">mellinger2011minimum</bcf:citekey>
-    <bcf:citekey order="37" intorder="2">sun2021fast</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">carlone2020vnav</bcf:citekey>
     <bcf:citekey order="38" intorder="1">mellinger2011minimum</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">sun2021fast</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">bertsekas1997nonlinear</bcf:citekey>
+    <bcf:citekey order="38" intorder="2">sun2021fast</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">mellinger2011minimum</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">sun2021fast</bcf:citekey>
     <bcf:citekey order="41" intorder="1">bertsekas1997nonlinear</bcf:citekey>
-    <bcf:citekey order="41" intorder="2">boyd2004convex</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">lee2003smooth</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">bertsekas1997nonlinear</bcf:citekey>
+    <bcf:citekey order="42" intorder="2">boyd2004convex</bcf:citekey>
     <bcf:citekey order="43" intorder="1">lee2003smooth</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">EPFL_Part5</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">sun2021fast</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">nocedal2006numerical</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">lee2003smooth</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">EPFL_Part5</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">sun2021fast</bcf:citekey>
     <bcf:citekey order="47" intorder="1">nocedal2006numerical</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">superlu1997superlu</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">2020SciPy-NMeth</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">superlu1997superlu</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">osqp</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">harris2020array</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">Hunter:2007</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">conn2000trust</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">sun2021fast</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">nocedal2006numerical</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">superlu1997superlu</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">2020SciPy-NMeth</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">superlu1997superlu</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">osqp</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">harris2020array</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">Hunter:2007</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">conn2000trust</bcf:citekey>
     <bcf:citekey order="56" intorder="1">sun2021fast</bcf:citekey>
     <bcf:citekey order="57" intorder="1">sun2021fast</bcf:citekey>
-    <bcf:citekey order="57" intorder="2">amos2017optnet</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">goulart2024clarabel</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">chen2024cuclarabel</bcf:citekey>
-    <bcf:citekey order="60" intorder="1">mellinger2011minimum</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">rees2014null</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">andrychowicz2016learning</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">sun2021fast</bcf:citekey>
+    <bcf:citekey order="58" intorder="2">amos2017optnet</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">goulart2024clarabel</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">chen2024cuclarabel</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">mellinger2011minimum</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">rees2014null</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">andrychowicz2016learning</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">kolda2009tensor</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

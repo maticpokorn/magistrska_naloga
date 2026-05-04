@@ -793,6 +793,42 @@
       \field{pages}{2096\bibrangedash 2103}
       \range{pages}{8}
     \endentry
+    \entry{kolda2009tensor}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a17e10e04fa2d01fdb9bfc9a669b4182}{%
+           family={Kolda},
+           familyi={K\bibinitperiod},
+           given={Tamara\bibnamedelima G},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=e452c0602af86438cb78062b7bac80bb}{%
+           family={Bader},
+           familyi={B\bibinitperiod},
+           given={Brett\bibnamedelima W},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{fullhash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{fullhashraw}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{bibnamehash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{authorbibnamehash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{authornamehash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{authorfullhash}{782cc4ad2fea7afb684072cddcaf4d10}
+      \strng{authorfullhashraw}{782cc4ad2fea7afb684072cddcaf4d10}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM review}
+      \field{number}{3}
+      \field{title}{Tensor decompositions and applications}
+      \field{volume}{51}
+      \field{year}{2009}
+      \field{pages}{455\bibrangedash 500}
+      \range{pages}{46}
+    \endentry
     \entry{EPFL_Part5}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=1c4e90e33dbca6b98164259f6132aec2}{%
