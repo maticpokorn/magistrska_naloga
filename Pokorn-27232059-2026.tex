@@ -13,10 +13,10 @@
 \avtor{Matic Pokorn}
 
 % - naslov dela v slovenščini
-\naslov{Newtonova metoda za dvonivojsko optimizacijo trajektorij diferencialno ploščatih sistemov z analitičnimi odvodi}
+\naslov{Newtonova metoda z analitičnimi odvodi za dvonivojsko optimizacijo trajektorij diferencialno ploščatih sistemov}
 
 % - naslov dela v angleščini
-\title{A Newton method for bilevel trajectory optimization of differentially flat systems with analytical derivatives}
+\title{Newton's method with analytical derivatives for bilevel trajectory optimization of differentially flat systems}
 
 % - ime mentorja/mentorice s polnim nazivom:
 %   - doc.~dr.~Ime Priimek
@@ -41,7 +41,7 @@
 \povzetek{Za načrtovanje zveznih trajektorij diferencialno ploščatih sistemov, kot so kvadrotorji, je eden izmed ustaljenih načinov dvonivojska optimizacija, kjer je spodnji nivo definiran kot kvadratični program (QP), zgornji nivo pa se rešuje z izračunom gradienta optimalne rešitve spodnjega nivoja; tega se s pomočjo občutljivostne analize KKT pogojev QP in izreka o implicitni funkciji da izračunati analitično. V tem delu naredimo korak dlje in analitično izračunamo parcialne odvode drugega reda optimalne rešitve QP, kar omogoči optimizacijo z Newtonovo metodo in posledično konvergenco k optimalni rešitvi v bistveno manj korakih kot z obstoječimi pristopi. Z izkoriščenjem strukture matrik cenovne funkcije in linearnih omejitev dosežemo dodatne pohitritve.}
 
 % - povzetek v angleščini
-\abstract{Bilevel optimization is an established approach to continuous trajectory planning for differentially flat systems such as quadrotors, where the lower level is defined as a quadratic program (QP) and the upper level is solved by computing the gradient of the optimal solution of the lower level. The gradient can be computed analytically via the sensitivity analysis of the QP's KKT conditions and the use of the implicit function theorem. In this work we take a step further and analytically compute second order derivatives of the QP optimal solution, enabling the use of Newton's method and consequently convergence to the optimum in significantly fewer iterations than with existing approaches. Utilising the structures of the cost and constraint matrices we achieve additional speed-ups.}
+\abstract{Bilevel optimization is an established approach to continuous trajectory planning for differentially flat systems such as quadrotors, where the lower level is defined as a quadratic program (QP) and the upper level is solved by computing the gradient of the optimal solution of the lower level. The gradient can be computed analytically via the sensitivity analysis of the QP's KKT conditions and the use of the implicit function theorem. In this work we take a step further and analytically compute second-order derivatives of the QP optimal solution, enabling the use of Newton's method and consequently convergence to the optimum in significantly fewer iterations than with existing approaches. Utilising the structures of the cost and constraint matrices we achieve additional speed-ups.}
 
 % - klasifikacijske oznake, ločene z vejicami
 %   Oznake, ki opisujejo področje dela, so dostopne na strani https://www.ams.org/msc/
@@ -246,7 +246,7 @@
 \section{Uvod}
 
 % 1. motivacija (kvadrotorji, hitro generiranje, diferencialna ploščatost)
-V zadnjih letih smo priča hitremu razvoju na področju avtonomnega upravljanja brezpilotnih letalnikov, kjer se prepletajo različna raziskovalna področja, kot so računalniški vid, računska geometrija, teorija upravljanja, numerične metode, optimizacija, itd.  Načrtovanje gibanja brezpilotnikov se v grobem deli na tri bolj ali manj ločene procese: (i) \textit{predstavitev okolja}, (ii) \textit{načrtovanje poti} in (iii) \textit{optimizacijo trajektorij} \cite{zhou2025survey}. Predstavitev okolja se ukvarja s prepoznavanjem in predstavitvijo ovir s pomočjo senzorjev, kot so LiDAR in kamere za zaznavanje globine. Načrtovanje poti se ukvarja z iskanjem geometrične poti, ki se izogne oviram, ki so bile določene s  predstavitvijo okolja. Optimizacija trajektorij pa iz določene geometrijske poti izračuna za brezpilotnika dopustno trajektorijo, pri čemer optimizira želen kriterij in se izogiba oviram. Pomembno vlogo igra tudi \textit{vodenje sistemov}, ki se ukvarja z raziskovanjem krmilnikov, ki iz želene trajektorije izračunajo pripadajoče krmilne vhode (npr. hitrosti vrtenja propelerjev). Za nekatere oblike brezpilotnih letalnikov, kot so kvadrotorji, velja, da so diferecialno ploščati sistemi \cite{mellinger2011minimum}, kar pomeni, da lahko krmilne vhode sistema opišemo z izhodom sistema in njegovimi odvodi.
+V zadnjih letih smo priča hitremu razvoju na področju avtonomnega upravljanja brezpilotnih letalnikov, kjer se prepletajo različna raziskovalna področja, kot so računalniški vid, računska geometrija, teorija upravljanja, numerične metode, optimizacija, itd. Načrtovanje gibanja brezpilotnikov se v grobem deli na tri bolj ali manj ločene procese: (i) \textit{predstavitev okolja}, (ii) \textit{načrtovanje poti} in (iii) \textit{optimizacijo trajektorij} \cite{zhou2025survey}. Predstavitev okolja se ukvarja s prepoznavanjem in predstavitvijo ovir s pomočjo senzorjev, kot so LiDAR in kamere za zaznavanje globine. Načrtovanje poti se ukvarja z iskanjem geometrične poti, ki se izogne oviram, ki so bile določene s  predstavitvijo okolja. Optimizacija trajektorij pa iz določene geometrijske poti izračuna za brezpilotnika dopustno trajektorijo, pri čemer optimizira želen kriterij in se izogiba oviram. Pomembno vlogo igra tudi \textit{vodenje sistemov}, ki se ukvarja z raziskovanjem krmilnikov, ki iz želene trajektorije izračunajo pripadajoče krmilne vhode (npr. hitrosti vrtenja propelerjev). Za nekatere oblike brezpilotnih letalnikov, kot so kvadrotorji, velja, da so diferencialno ploščati sistemi \cite{mellinger2011minimum}, kar pomeni, da lahko krmilne vhode sistema opišemo z izhodom sistema in njegovimi odvodi.
 
 Za avtonomno letenje, predvsem v okoljih z veliko ovirami in pri večjih hitrostih, kjer je potrebno izvajanje agresivnih manevrov, je bistvenega pomena generiranje dopustnih trajektorij, pri čemer optimiziramo želen kriterij, hkrati pa se brezpilotnik izogne fizičnim preprekam, kot so npr. stene, stebri, drevesa, itd. Prav tako je pomembno, da so algoritmi, ki take probleme rešujejo, izjemno hitri, posebno v primerih, kjer se okolje brezpilotnika hitro spreminja (npr. imamo premikajoče se ovire) in je treba trajektorije računati v realnem času. 
 % 2. opis problema
@@ -283,7 +283,7 @@ Preostanek tega magistrskega dela je strukturiran na sledeč način. Najprej v p
 \section{Pregled področja}
 \label{sec:pregled_podrocja}
 
-V tem poglavju opišemo sorodna dela in predstavimo pojme in dognanja, na katerih je naše delo osnovano. Najprej podamo opis diferencialno ploščatih sistemov in njihovo povezavo z optimizacijo trajektorij. Nato predstavimo trenutno stanje področja optimizacije trajektorij za kvadrotorje in raziskave, na katerih naše delo bodisi temelji bodisi predstvaljajo alternativne pristope k reševanju podobnih problemov. Potem opišemo področje dvonivojske optimizacije, na koncu pa še Newtonovo metodo za iskanje ekstremov.
+V tem poglavju opišemo sorodna dela in predstavimo pojme in dognanja, na katerih je naše delo osnovano. Najprej podamo opis diferencialno ploščatih sistemov in njihovo povezavo z optimizacijo trajektorij. Nato predstavimo trenutno stanje področja optimizacije trajektorij za kvadrotorje in raziskave, na katerih naše delo bodisi temelji bodisi predstavljajo alternativne pristope k reševanju podobnih problemov. Potem opišemo področje dvonivojske optimizacije, na koncu pa še Newtonovo metodo za iskanje ekstremov.
 
 \subsection{Diferencialno ploščati sistemi}
 V tem delu se opiramo na pojem diferencialne ploščatosti. Denimo, da imamo podan dinamični sistem, ki ga lahko opišemo z diferencialnimi enačbami:
@@ -319,11 +319,11 @@ Načrtovanje trajektorij brezpilotnikov s polinomskimi zlepki se je uveljavilo v
 
 V optimizaciji trajektorij pomembno vlogo igrajo neenakostne omejitve za izogibanje oviram in omejevanje maksimalne hitrosti, pospeška, itd. Za izogibanje oviram se pogosto uporabljajo zaporedja konveksnih poliedrov, da ustvarijo varne koridorje letenja; obstajajo algoritmi, ki učinkovito izračunajo včrtan polieder okoli točke \cite{deits2015computing} oz. daljice \cite{liu2017planning}. Na ta način neenakostne omejitve za izogibanje oviram uporabijo v \cite{sun2021fast}, kjer kasneje optimizirajo časovno razporeditev po segmentih. V \cite{tordesillas2021faster} namesto optimizacije časov segmentov problem formulirajo kot mešan celoštevilski kvadratični program (MIQP), kjer fiksirajo čase segmentov in uporabijo diskretne spremenljivke, da določijo, kateri segmenti se bodo nahajali v katerem poliedru.
 
-Algoritmi, ki optimizacijo polinomskih trajektorij rešujejo s \ac{QP}, pogosto uporabljajo različne baze polinomov in zlepkov, kot so Bernsteinovi polinomi \cite{sun2021fast, tordesillas2021faster} in B-zlepki \cite{zhou2020ego}, kar omogoča enostavno vključevanje neenakostnih omejitev s kontrolnimi točkami in boljšo numerično stabilnost v primerjavi z običajnimi monomskimi polinomi \cite{runge1901}. Kljub prednostim Bernsteinovih polinomov in B-zlepkov tem delu uporabljamo monomske polinome, saj nam to omogoči enostavnejšo izpeljavo analitičnih odvodov drugega reda, kar je ključno za našo metodo.
+Algoritmi, ki optimizacijo polinomskih trajektorij rešujejo s \ac{QP}, pogosto uporabljajo različne baze polinomov in zlepkov, kot so Bernsteinovi polinomi \cite{sun2021fast, tordesillas2021faster} in B-zlepki \cite{zhou2020ego}, kar omogoča enostavno vključevanje neenakostnih omejitev s kontrolnimi točkami in boljšo numerično stabilnost v primerjavi z običajnimi monomskimi polinomi \cite{runge1901}. Kljub prednostim Bernsteinovih polinomov in B-zlepkov v tem delu uporabljamo monomske polinome, saj nam to omogoči enostavnejšo izpeljavo analitičnih odvodov drugega reda, kar je ključno za našo metodo.
 
 Obstajajo tudi pristopi, ki ne ločijo časovnih in prostorskih spremenljivk \cite{fridovich2018planning} in se zanašajo na kompleksne algoritme za nelinearno programiranje \cite{wachter2006implementation}. Ti algoritmi pogosto omogočajo sočasno optimizacijo vmesnih točk znotraj določenega dopustnega območja, kar poveča prilagodljivost trajektorije.
 
-Pristopi za optimizacijo trajektorij se srečujejo z dilemo, kjer morajo najti ravnovesje med hitrostjo izračuna in optimalnostjo rezultata. V \cite{zhou2020ego} se osredotočajo na hitrost in trajektorije izračunajo v milisekundah, vendar ne zagotavljajo optimalnosti, kar lahko povzroči bolj agresivne manevre in posledično neučunkovite in nevarne trajektorije. V \cite{richter2016polynomial} se osredotočajo na optimalnost, vendar je za čas izračuna trajektorije potrebnih nekaj sekund, kar je neprimerno za načrtovanje trajektorij v realnem času. V tem delu zagotavljamo konvergenco k lokalno optimalni rešitvi, pri čemer želimo zagotoviti hitro izračunavanje trajektorij. Medtem ko naša metoda z obstoječo implementacijo ni dovolj hitra za načrtovanje trajektorij povsem v realnem času, je primerna za asinhrono generiranje trajektorij, kjer se trajektorije izračunajo v ločenem procesu, ki ni vezan na časovno omejitev, in se nato posredujejo v proces vodenja brezpilotnika, ki sledi trajektoriji.
+Pristopi za optimizacijo trajektorij se srečujejo z dilemo, kjer morajo najti ravnovesje med hitrostjo izračuna in optimalnostjo rezultata. V \cite{zhou2020ego} se osredotočajo na hitrost in trajektorije izračunajo v milisekundah, vendar ne zagotavljajo optimalnosti, kar lahko povzroči bolj agresivne manevre in posledično neučinkovite in nevarne trajektorije. V \cite{richter2016polynomial} se osredotočajo na optimalnost, vendar je za čas izračuna trajektorije potrebnih nekaj sekund, kar je neprimerno za načrtovanje trajektorij v realnem času. V tem delu zagotavljamo konvergenco k lokalno optimalni rešitvi, pri čemer želimo zagotoviti hitro izračunavanje trajektorij. Medtem ko naša metoda z obstoječo implementacijo ni dovolj hitra za načrtovanje trajektorij povsem v realnem času, je primerna za asinhrono generiranje trajektorij, kjer se trajektorije izračunajo v ločenem procesu, ki ni vezan na časovno omejitev, in se nato posredujejo v proces vodenja brezpilotnika, ki sledi trajektoriji.
 
 \subsection{Dvonivojska optimizacija}
 Dvonivojska optimizacija se ukvarja z optimizacijskimi problemi, kjer je cenovna funkcija enega optimizacijskega problema (zgornji nivo) odvisna od optimalne vrednosti odločitvenih spremenljivk drugega optimizacijskega problema (spodnji nivo). Splošna oblika dvonivojskega optimizacijskega problema je predstavljena kot:
@@ -338,7 +338,7 @@ kjer sta $f$ in $g$ cenovna funkcija in omejitve spodnjega nivoja, $F$ in $G$ pa
 
 Znan primer dvonivojske optimizacije je Stackelbergova igra \cite{von2010market}, ki je igra med dvema igralcema (voditelj in sledilec), kjer voditelj optimizira svojo strategijo glede na sledilčevo. 
 
-Dvonivojska optimizacija v načrtovanju trajektorij brezpilotnikov in v robotiki na splošno se navadno uporablja, ko je optimizacijski problem odvisen od časovne razporeditve in nekaterih drugih parametrov, ki pa so tudi odvisni od časovne razporeditve. V našem primeru so to koeficienti polinomov. Pogosto se, kot v našem primeru, izkaže, da se da spodnji nivo izraziti kot \ac{QP}, ki se ga da rešiti s standardnimi knjižnicami. Tudi problem v \cite{mellinger2011minimum} je implicitno definiran kot dvonivojski optimizacijski problem. V \cite{sun2021fast}, kjer rešujejo isti problem, poleg izračuna analitičnih gradientov svojo rešitev podkrepijo teoretično. Izven domene načrtovanja trajektorij v \cite{amos2017optnet} dvonivojsko optimizacijo na \ac{QP} uporabijo za integracijo \ac{QP} kot plast v golobkih nevronskih mrežah, kjer so parametri \ac{QP} odvisni od drugih plasti v nevronski mreži. V \cite{chapelle2002choosing} na zelo podoben način kot v tem delu (kjer je spodnji nivo \ac{QP}) optimizirajo hiperparametre metode podpornih vektorjev (angl. support vector machines). V \cite{dyro2022second} razvijejo teorijo računanja Hessejeve matrike zgornjega problema splošnih dvonivojskih neomejenih optimizacijskih problemov z uporabo izreka o implicitni funkciji (\acs{IFT}); z eksperimenti tudi pokažejo hitrejšo konvergenco kot obstoječe metode.
+Dvonivojska optimizacija v načrtovanju trajektorij brezpilotnikov in v robotiki na splošno se navadno uporablja, ko je optimizacijski problem odvisen od časovne razporeditve in nekaterih drugih parametrov, ki pa so tudi odvisni od časovne razporeditve. V našem primeru so to koeficienti polinomov. Pogosto se, kot v našem primeru, izkaže, da se da spodnji nivo izraziti kot \ac{QP}, ki se ga da rešiti s standardnimi knjižnicami. Tudi problem v \cite{mellinger2011minimum} je implicitno definiran kot dvonivojski optimizacijski problem. V \cite{sun2021fast}, kjer rešujejo isti problem, poleg izračuna analitičnih gradientov svojo rešitev podkrepijo teoretično. Izven domene načrtovanja trajektorij v \cite{amos2017optnet} dvonivojsko optimizacijo na \ac{QP} uporabijo za integracijo \ac{QP} kot plast v globokih nevronskih mrežah, kjer so parametri \ac{QP} odvisni od drugih plasti v nevronski mreži. V \cite{chapelle2002choosing} na zelo podoben način kot v tem delu (kjer je spodnji nivo \ac{QP}) optimizirajo hiperparametre metode podpornih vektorjev (angl. support vector machines). V \cite{dyro2022second} razvijejo teorijo računanja Hessejeve matrike zgornjega problema splošnih dvonivojskih neomejenih optimizacijskih problemov z uporabo izreka o implicitni funkciji (\acs{IFT}); z eksperimenti tudi pokažejo hitrejšo konvergenco kot obstoječe metode.
 
 \subsection{Newtonova metoda}
 Newtonova metoda je iterativna metoda za iskanje ekstremov dvakrat zvezno odvedljivih funkcij \cite{boyd2004convex}. Korak v iteraciji Newtonove metode za funkcije več spremenljivk se izračuna z enačbo
@@ -346,7 +346,7 @@ Newtonova metoda je iterativna metoda za iskanje ekstremov dvakrat zvezno odvedl
 \begin{equation}
     x_{k+1} = x_k - [\nabla^2 f(x_k)]^{-1} \nabla f(x_k), 
 \end{equation}
-kjer je $f : \mathbb{R}^n \to \mathbb{R}$ dvakrat zvezno odvedljiva funkcija, $x_k \in \mathbb{R}^n$ trenutna točka, $x_{k+1} \in \mathbb{R}^n$ pa naslednja točka iteracije. $\nabla^2f(x_k)$ predstvavlja Hessejevo matriko funkcije $f$ v točki $x_k$, $\nabla f(x_k)$ pa gradient funkcije $f$ v točki $x_k$. Kot že omenjeno, v \cite{dyro2022second} razvijejo teorijo računanja gradienta in Hessejeve matrike za neomejene dvonivojske optimizacijske probleme in pokažejo hitro konvergenco. Tudi v tem delu eksperimenti pokažejo zelo hitro konvergenco k optimalni rešitvi.
+kjer je $f : \mathbb{R}^n \to \mathbb{R}$ dvakrat zvezno odvedljiva funkcija, $x_k \in \mathbb{R}^n$ trenutna točka, $x_{k+1} \in \mathbb{R}^n$ pa naslednja točka iteracije. $\nabla^2f(x_k)$ predstavlja Hessejevo matriko funkcije $f$ v točki $x_k$, $\nabla f(x_k)$ pa gradient funkcije $f$ v točki $x_k$. Kot že omenjeno, v \cite{dyro2022second} razvijejo teorijo računanja gradienta in Hessejeve matrike za neomejene dvonivojske optimizacijske probleme in pokažejo hitro konvergenco. Tudi v tem delu eksperimenti pokažejo zelo hitro konvergenco k optimalni rešitvi.
 
 \section{Opis metode}
 \label{sec:opis_metode}
@@ -402,7 +402,7 @@ V tem razdelku opišemo, kako problem, predstavljen v ~\eqref{eq:functional}, pr
 kjer je $\mathbf{a} = [\avec_1, \avec_2, \ldots, \avec_n] \in \mathbb{R}^{n (d+1)}$ optimizacijski vektor in predstavlja koeficiente polinomskih zlepkov ($\avec_i$ je vektor koeficientov, ki pripadajo $i$-temu segmentu), $\mathbf{Q} \in \mathbb{R}^{n(d+1) \times n(d+1)}$ je simetrična in pozitivno definitna matrika, $\mathbf{A} \in \mathbb{R}^{M \times n(d+1)}$ in $\mathbf{b} \in \mathbb{R}^M$ pa predstavljata linearne omejitve. Najprej bomo pokazali, kako izračunamo matriko $\mathbf{Q}$, nato pa še, kako izračunamo matriko $\mathbf{A}$ in vektor $\mathbf{b}$. Bistvenega pomena pri tej izpeljavi je, da so elementi matrik $\mathbf{Q}$ in $\mathbf{A}$ zvezno odvisni od vmesnih časov $t_i$ \cite{carlone2020vnav}; to nam bo koristilo pri izračunu gradienta in Hessejeve matrike cenovne funkcije v zgornjem nivoju dvonivojskega problema.
 
 \subsubsection{Izračun matrike $\mathbf{Q}$}
-Matriko $\mathbf{Q}$ izračunamo tako, da ločeno prevedemo posamezen integral $\frac{1}{2}\int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ na matrično enačbo $\mathbf{a}_i^\top \mathbf{Q}_i \mathbf{a}_i$, kjer je $\mathbf{a}_i$ vektor koeficientov $i$-tega polinoma. Celotno vsoto $\frac{1}{2}\sum_{i=1}^n \int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ pa nato predstavimo kot bločno matriko
+Matriko $\mathbf{Q}$ izračunamo tako, da prevedemo posamezen integral $\frac{1}{2}\int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ na matrično enačbo $\mathbf{a}_i^\top \mathbf{Q}_i \mathbf{a}_i$, kjer je $\mathbf{a}_i$ vektor koeficientov $i$-tega polinoma. Celotno vsoto $\frac{1}{2}\sum_{i=1}^n \int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ pa nato predstavimo kot bločno matriko
 \begin{equation}
 \label{eq:cost_function_matrix}
     \mathbf{a}^\top \mathbf{Q} \mathbf{a} = 
@@ -420,7 +420,7 @@ Matriko $\mathbf{Q}$ izračunamo tako, da ločeno prevedemo posamezen integral $
     \end{bmatrix}.
 \end{equation}
 
-Za preoblikovaje integrala $J := \frac{1}{2}\int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ v matrično obliko uporabimo naslednja rezultata:
+Za preoblikovanje integrala $J := \frac{1}{2}\int_0^{t_i} (p_i^{(r)}(\tau))^2 d\tau$ v matrično obliko uporabimo naslednja rezultata:
 \begin{enumerate}
     \item \textbf{$r$-ti odvod polinoma.}
 \begin{equation}
@@ -451,8 +451,8 @@ Sedaj že lahko opazimo, da imajo posamezni členi v vsoti obliko $\qmat_{uv} a_
 Najprej izračunamo parcialni odvod prvega reda funkcije $J$:
 \begin{equation}
     \begin{aligned}
-    \frac{\partial J}{\partial a_u} &= \sum_{k=0}^{2d} \sum_{l=0}^{d} \prod_{m=0}^{r-1} (l-m)(k-l-m) \left(\frac{\partial a_l}{\partial a_u} a_{k-l} + \frac{\partial a_{k-l}}{\partial a_u} a_l \right) \frac{t^{k-2r+1}}{k-2r+1}\\
-    &= 2\sum_{k=0}^{2d} \prod_{m=0}^{r-1} (u-m)(k-u-m) a_{k-u} \frac{t^{k-2r+1}}{k-2r+1}
+    \frac{\partial J}{\partial a_u} &= \frac{1}{2}\sum_{k=0}^{2d} \sum_{l=0}^{d} \prod_{m=0}^{r-1} (l-m)(k-l-m) \left(\frac{\partial a_l}{\partial a_u} a_{k-l} + \frac{\partial a_{k-l}}{\partial a_u} a_l \right) \frac{t^{k-2r+1}}{k-2r+1}\\
+    &= \sum_{k=0}^{2d} \prod_{m=0}^{r-1} (u-m)(k-u-m) a_{k-u} \frac{t^{k-2r+1}}{k-2r+1}
 \end{aligned}
 \end{equation}
 
@@ -465,7 +465,7 @@ Pri odvajanju notranje vsote dobimo samo dva neničelna člena, kjer je $0 \leq 
 \end{aligned}
 \end{equation}
 
-Pri drugem parcialnem odvodu preostale vsote pa pa dobimo samo en neničelen člen, kjer $v = k-u$ in $0 \leq v \leq d$.
+Pri drugem parcialnem odvodu preostale vsote pa dobimo samo en neničelen člen, kjer $v = k-u$ in $0 \leq v \leq d$.
 
 Torej lahko zaključimo, da velja:
 \begin{equation}
@@ -527,7 +527,7 @@ Vektor $\bvec$ je sestavljen iz koordinat vmesnih točk $P_i$ in ničel, ki ustr
          \caption{Trajektorija z optimiziranimi vmesnimi časi - izračunana z dvonivojsko optimizacijo.}
          \label{fig:variable_time}
      \end{subfigure}
-     \caption{Primerjava trajektorij, kjer fiksno določimo vmesne čase (a), in kjer izvedemo optimizacijo po vmesnih časih (b). Obe trajektoriji imata končni čas 5s, vendar ima desna trajektorija nižjo optimialno vrednost in tudi nižjo maksimalno hitrost.}
+     \caption{Primerjava trajektorij, kjer fiksno določimo vmesne čase (a), in kjer izvedemo optimizacijo po vmesnih časih (b). Obe trajektoriji imata končni čas 5s, vendar ima desna trajektorija nižjo optimalno vrednost in tudi nižjo maksimalno hitrost.}
      \label{fig:primerjava_fixed_variable}
 \end{figure}
 
@@ -588,7 +588,7 @@ Za konveksni program
 Slaterjev pogoj velja, če obstaja $x^\circ$ tako, da
 \begin{itemize}
 \item $g_i(x^\circ) < 0$ za vse $i=1,\dots,m$ (stroga neenakostna dopustnost),
-\item $h_j(x^\circ) = 0$ for all $j=1,\dots,p$ (enakostna dopustnost).
+\item $h_j(x^\circ) = 0$ za vse $j=1,\dots,p$ (enakostna dopustnost).
 \end{itemize}
 
 Opazimo lahko, da v primeru, kjer neenakostnih omejitev ni, Slaterjev pogoj velja.
@@ -604,7 +604,7 @@ V primeru našega optimizacijskega problema, kjer imamo kvadratično cenovno fun
     \end{aligned}
 \end{equation}
 
-\noindent še bolj kompaktno pa jih lahko zapišem kot:
+\noindent še bolj kompaktno pa jih lahko zapišemo kot:
 
 \begin{equation}
     \begin{aligned}
@@ -648,7 +648,7 @@ V nadaljevanju bomo izmenično uporabljali tako osnovno kot kompaktno obliko ($\
 \subsubsection{Izrek o implicitni funkciji}
 \label{sec:ift}
 
-Z uporabo izreka o implicitni fukciji lahko pokažemo, da obstaja odprta množica $U$ in gladke funkcije $\yimplicit$ : $U \to \R^{m+n}$, $\aimplicit$ : $U \to \R^{n}$, $\muimplicit$ : $U \to \R^{m}$, da velja $\yimplicit(\tvec) = (\aimplicit(\tvec), \muimplicit(\tvec)) = (\avec^*, \muvec^*)$. Tu sta $\avec^*$ in $\muvec^*$ optimalni vrednosti primarnih in dualnih spremenljivk \ac{QP}, parametriziranega s $\tvec$. To nam da formalno podlago, da cenovno funkcijo $F(\tvec)$ odvajamo glede na $\tvec$, saj jo lahko zapišemo kot:
+Z uporabo izreka o implicitni funkciji lahko pokažemo, da obstaja odprta množica $U$ in gladke funkcije $\yimplicit$ : $U \to \R^{m+n}$, $\aimplicit$ : $U \to \R^{n}$, $\muimplicit$ : $U \to \R^{m}$, da velja $\yimplicit(\tvec) = (\aimplicit(\tvec), \muimplicit(\tvec)) = (\avec^*, \muvec^*)$. Tu sta $\avec^*$ in $\muvec^*$ optimalni vrednosti primarnih in dualnih spremenljivk \ac{QP}, parametriziranega s $\tvec$. To nam da formalno podlago, da cenovno funkcijo $F(\tvec)$ odvajamo glede na $\tvec$, saj jo lahko zapišemo kot:
 
 \begin{equation}
     \label{eq:cost_function_implicit}
@@ -666,12 +666,12 @@ V tem razdelku najprej podamo izrek o implicitni funkciji \cite{krantz2002implic
 \begin{izrek}[Izrek o implicitni funkciji \cite{krantz2002implicit}]
     Naj bo $f: \mathbb{R}^{m+n} \to \mathbb{R}^m$ zvezno odvedljiva funkcija in naj ima $\mathbb{R}^{m+n}$ koordinate $(\mathbf{x},\mathbf{y})$. 
     
-    Fiksirajmo točko $(\mathbf{a}, \mathbf{b}) = (a_1, a_2, \ldots, a_m, b_1, b_2, \ldots, a_n)$, kjer velja $f(\mathbf{a},\mathbf{b}) = \mathbf{0}$ in je $\mathbf{0} \in \mathbb{R}^m$ ničelni vektor. Če je Jacobijeva matrika
+    Fiksirajmo točko $(\mathbf{a}, \mathbf{b}) = (a_1, a_2, \ldots, a_m, b_1, b_2, \ldots, b_n)$, kjer velja $f(\mathbf{a},\mathbf{b}) = \mathbf{0}$ in je $\mathbf{0} \in \mathbb{R}^m$ ničelni vektor. Če je Jacobijeva matrika
     \begin{equation}
         J_\mathbf{y}f(\mathbf{a}, \mathbf{b}) = \left[ \frac{\partial f_i}{\partial y_j} (\mathbf{a},\mathbf{b})\right]
     \end{equation}
 
-    \noindent obrnljiva, potem obstaja odprta množica $U \in \mathbb{R}^n$, ki vsebuje $\mathbf{a}$, tako da obstaja enolična funkcija $g:U \to \mathbb{R}^m$, kjer $g(\mathbf{a}) = \mathbf{b}$ in $f(\mathbf{x}, g(\mathbf{x})) = \mathbf{0}$ za vse $\mathbf{x} \in U$. Nadalje, $g$ je zvezno odvedljiva in Jacobijeva matrika parcialnih odvodov $g$ v $U$ je definirana kot:
+    \noindent obrnljiva, potem obstaja odprta množica $U \subset \mathbb{R}^n$, ki vsebuje $\mathbf{a}$, tako da obstaja enolična funkcija $g:U \to \mathbb{R}^m$, kjer $g(\mathbf{a}) = \mathbf{b}$ in $f(\mathbf{x}, g(\mathbf{x})) = \mathbf{0}$ za vse $\mathbf{x} \in U$. Nadalje, $g$ je zvezno odvedljiva in Jacobijeva matrika parcialnih odvodov $g$ v $U$ je definirana kot:
     \begin{equation}
         \left[\frac{\partial g_i}{\partial x_j}(\mathbf{x})\right]_{m \times n}
 = -\left[ J_\mathbf{y}f(\mathbf{x}, g(\mathbf{x})) \right]^{-1}_{m \times m}
@@ -733,7 +733,7 @@ V tem razdelku predstavimo, kako izračunamo Hessejevo matriko cenovne funkcije 
     + \frac{1}{2}\aimplicit^\top \partial_{t_it_j}\qmat \aimplicit.
 \end{equation}
 
-Tudi tu moramo določiti vrednost več komponent; razen $\partial_{t_it_j} \qmat$ in $\partial_{t_it_j} \aimplicit$ smo ji izračunali že med postopkom izračuna gradienta. $\partial{t_it_j} \qmat$ lahko izračunamo tako, da še enkrat odvajamo $\partial_{t_i} \qmat$ po $t_j$, za $\partial_{t_it_j} \aimplicit$ pa se spet poslužimo \ac{IFT}. rešimo spodnji sistem enačb, ki ga dobimo z odvajanjem obeh strani sistema v enačbi~\eqref{eq:dkkt} po $t_j$:
+Tudi tu moramo določiti vrednost več komponent; razen $\partial_{t_it_j} \qmat$ in $\partial_{t_it_j} \aimplicit$ smo ji izračunali že med postopkom izračuna gradienta. $\partial_{t_it_j} \qmat$ lahko izračunamo tako, da še enkrat odvajamo $\partial_{t_i} \qmat$ po $t_j$, za $\partial_{t_it_j} \aimplicit$ pa se spet poslužimo \ac{IFT}. Rešimo spodnji sistem enačb, ki ga dobimo z odvajanjem obeh strani sistema v enačbi~\eqref{eq:dkkt} po $t_j$:
 \begin{equation}
     \label{eq:ddkkt}
     \mathbf{K} \partial_{t_it_j}\yimplicit = - (\partial_{t_it_j} \mathbf{K} \yimplicit
@@ -779,7 +779,7 @@ To je standarden pristop pri Newtonovi metodi z enakostnimi omejitvami \cite{noc
     \tvec_{k+1} = \tvec_k + \alpha \Delta \tvec_k.
 \end{equation}
 
-V nadaljevanju bomo veliko pozornost namenili reševanju sistemov enačb~\eqref{eq:dkkt} in~\eqref{eq:ddkkt}, zato bi bilo morda na prvi pogled smiseno optimizirati tudi reševanje tega sistema. Vendar pa so sistemi v enačbah~\eqref{eq:dkkt} in~\eqref{eq:ddkkt} za problem iste velikosti mnogo večji kot sistem, opisan v enačbi~\eqref{eq:upper_system}, prav tako pa imajo več desnih strani. Zato so tudi ozko grlo te metode v smislu računske zahtevnosti, čas reševanja tega sistema pa je v primerjavi zanemarljiv.
+V nadaljevanju bomo veliko pozornost namenili reševanju sistemov enačb~\eqref{eq:dkkt} in~\eqref{eq:ddkkt}, zato bi bilo morda na prvi pogled smiselno optimizirati tudi reševanje tega sistema. Vendar pa so sistemi v enačbah~\eqref{eq:dkkt} in~\eqref{eq:ddkkt} za problem iste velikosti mnogo večji kot sistem, opisan v enačbi~\eqref{eq:upper_system}, prav tako pa imajo več desnih strani. Zato so tudi ozko grlo te metode v smislu računske zahtevnosti, čas reševanja tega sistema pa je v primerjavi zanemarljiv.
 
 \subsubsection{Optimizacijski algoritem}
 
@@ -816,7 +816,7 @@ V tem razdelku predstavimo celoten optimizacijski algoritem, ki ga uporabljamo z
 \end{algorithmic}
 \end{algorithm}
 
-Algoritem~\ref{alg:gradhess} opisuje računanje gradienta in Hessejeve matrike po komponentah, kar, kot je razvidno v psevdokodi, zahteva gnezdenje zank in je z vidika implementacije precej neučinkovito. V naši implementaciji smo ta algoritem optimizairali tako, da smo s pomočjo vektorizacije in vektorskih operacij, ki jih ponuja knjižnica NumPy \cite{harris2020array}, izračunali vse parcialne odvode $\partial_{t_i} \aimplicit$ in $\partial_{t_it_j} \aimplicit$ v enem klicu funkcije, namesto da bi zanko po komponentah izvajali ločeno. Natančnejši opis optimizacije algoritma za računanje gradienta je podan v dodatku~\ref{app:implementation}.
+Algoritem~\ref{alg:gradhess} opisuje računanje gradienta in Hessejeve matrike po komponentah, kar, kot je razvidno v psevdokodi, zahteva gnezdenje zank in je z vidika implementacije precej neučinkovito. V naši implementaciji smo ta algoritem optimizirali tako, da smo s pomočjo vektorizacije in vektorskih operacij, ki jih ponuja knjižnica NumPy \cite{harris2020array}, izračunali vse parcialne odvode $\partial_{t_i} \aimplicit$ in $\partial_{t_it_j} \aimplicit$ v enem klicu funkcije, namesto da bi zanko po komponentah izvajali ločeno. Natančnejši opis optimizacije algoritma za računanje gradienta je podan v dodatku~\ref{app:implementation}.
 
 \begin{algorithm}[H]
 \caption{Newtonova metoda za optimizacijo časov segmentov}
@@ -863,7 +863,7 @@ Kot opisano v enačbi~\eqref{eq:kkt_matrix}, je KKT matrika definirana kot:
         \amat & \mathbf{0}
     \end{bmatrix}
 \end{equation}
-V poglavju~\ref{sec:prevedba} smo pokazali, da je matrika $\qmat$ bločno diagonalna matrika, matrika $\amat$ pa je bločno bidiagonalna matrika (ima neničelne bloke na glavni diagonali in prvi poddiagonali). Ker ima $\qmat$ $n$, $\amat$ pa $2n$ neničlnih blokov, je torej matrika $\kmat$ redka matrika z $O(n)$ neničelnimi elementi (natančneje, ima $5n$ neničlnih blokov), kjer je $n$ število segmentov trajektorije. Zaradi tega je smiselno uporabiti metodo faktorizacije, ki je prilagojena za redke matrike, kot je SuperLU \cite{superlu_ug99}, namesto da bi izračunali inverz matrike $\kmat$, kar bi bilo računsko bolj zahtevno.
+V poglavju~\ref{sec:prevedba} smo pokazali, da je matrika $\qmat$ bločno diagonalna matrika, matrika $\amat$ pa je bločno bidiagonalna matrika (ima neničelne bloke na glavni diagonali in prvi poddiagonali). Ker ima $\qmat$ $n$, $\amat$ pa $2n$ neničelnih blokov, je torej matrika $\kmat$ redka matrika z $O(n)$ neničelnimi elementi (natančneje, ima $5n$ neničelnih blokov), kjer je $n$ število segmentov trajektorije. Zaradi tega je smiselno uporabiti metodo faktorizacije, ki je prilagojena za redke matrike, kot je SuperLU \cite{superlu_ug99}, namesto da bi izračunali inverz matrike $\kmat$, kar bi bilo računsko bolj zahtevno.
 
 \subsubsection{Računanje desne strani sistemov linearnih enačb}
 \label{sec:rhs}
@@ -947,7 +947,7 @@ Vidimo lahko, da so bloki po zgornji diagonali neodvisni od $\tvec$, zato so nji
     \end{bmatrix}
 \end{equation}
 
-\item $\partial_{t_it_j}\qmat$ lahko izračunamo, da $\partial_{t_i} \qmat$ odvajamo po $t_j$. Opazimo lahko, da, če je $i \neq j$, potem je $\partial_{t_it_j}\qmat$ ničelna matrika. Sicer pa velja:
+\item $\partial_{t_it_j}\qmat$ lahko izračunamo tako, da $\partial_{t_i} \qmat$ odvajamo po $t_j$. Opazimo lahko, da, če je $i \neq j$, potem je $\partial_{t_it_j}\qmat$ ničelna matrika. Sicer pa velja:
 \begin{equation}
     \partial_{t_it_i} \mathbf{Q} = \text{diag}(\mathbf{0}, \ldots, \mathbf{0}, \partial_{t_it_i} \qmat_i, \mathbf{0}, \ldots, \mathbf{0})
 \end{equation}
@@ -1089,7 +1089,7 @@ V primeru $i \neq j$ pa člena s $\partial_{t_it_j}\qmat$ in $\partial_{t_it_j}\
 
 Vidimo lahko, da sama konstrukcija vektorjev $\mathbf{B}_i$ in $\mathbf{B}_{ij}$ zahteva $O(1)$ operacij glede na $n$, saj imajo bloki konstantno velikost ($\qmat_i \in \mathbb{R}^{(d+1)\times(d+1)}$ in $\amat_i \in \mathbb{R}^{(K+2) \times (d+1)}$). V dodatku \ref{app:implementation} pokažemo, kako v primeru gradienta lahko vektoriziramo opisani proces in namesto računanja v zanki po komponentah izračunamo vse $\mathbf{B}_i$ naenkrat s pomočjo tenzorjev. Enako lahko storimo tudi za Hessejevo matriko, vendar v tem primeru bralca napotimo na implementacijo.
 
-Ne glede na pohitritve izračuna desnih strani oziroma komponent $B_i$ in $B_{ij}$, pa je reševanje linearnih sistemov enačb s \ac{KKT} matriko $\kmat$ še vedno časovno zahtevno, saj je potrebno rešiti $n$ sistemov linearnih enačb za izračun gradienta in $\frac{n(n+1)}{2}$ sistemov linearnih enačb za izračun Hessejeve matrike. v naslednjem poglavju naslovimo kvadratično število desnih strani sistemov linearnih enačb, ki jih moramo rešiti za izračun Hessejeve matrike s tem, da pokažemo, da je mogoče doseči dober približek Hessejeve matrike z upoštevanjem le njenih pasov okoli diagonale.
+Ne glede na pohitritve izračuna desnih strani oziroma komponent $B_i$ in $B_{ij}$, pa je reševanje linearnih sistemov enačb s \ac{KKT} matriko $\kmat$ še vedno časovno zahtevno, saj je potrebno rešiti $n$ sistemov linearnih enačb za izračun gradienta in $\frac{n(n+1)}{2}$ sistemov linearnih enačb za izračun Hessejeve matrike. V naslednjem poglavju naslovimo kvadratično število desnih strani sistemov linearnih enačb, ki jih moramo rešiti za izračun Hessejeve matrike s tem, da pokažemo, da je mogoče doseči dober približek Hessejeve matrike z upoštevanjem le njenih pasov okoli diagonale.
 
 \subsubsection{Pasovna struktura Hessejeve matrike}
 \label{sec:hess_band}
@@ -1108,10 +1108,10 @@ Newtonova metoda v splošnem zahteva izračun in faktorizacijo Hessejeve matrike
 \section{Eksperimenti}
 \label{sec:eksperimenti}
 
-V tem poglavju predstavimo rezultate eksperimentov, ki smo jih izvedli za oceno učinkovitostin naše metode. Najprej predstavimo implementacijske podrobnosti in uporabljene knjižnice. Nato analiziramo konvergenco naše metode, ki jo primerjamo z dvema drugima metodama, in sicer z metodo, ki uporablja samo analitično izračunani gradient, in metodo trust-region, ki uporablja numerično izračunani gradient in Hessejevo matriko. Poleg tega analiziramo hitrost naše metode in njeno odvisnost od števila segmentov trajektorije. Na koncu proučimo pasovno strukturo Hessejeve matrike, kjer nas zanima kvaliteta algoritma glede na število pasov Hessejeve matrike, ki jih upoštevamo pri optimizaciji.
+V tem poglavju predstavimo rezultate eksperimentov, ki smo jih izvedli za oceno učinkovitosti naše metode. Najprej predstavimo implementacijske podrobnosti in uporabljene knjižnice. Nato analiziramo konvergenco naše metode, ki jo primerjamo z dvema drugima metodama, in sicer z metodo, ki uporablja samo analitično izračunani gradient, in metodo trust-region, ki uporablja numerično izračunani gradient in Hessejevo matriko. Poleg tega analiziramo hitrost naše metode in njeno odvisnost od števila segmentov trajektorije. Na koncu proučimo pasovno strukturo Hessejeve matrike, kjer nas zanima kvaliteta algoritma glede na število pasov Hessejeve matrike, ki jih upoštevamo pri optimizaciji.
 
 \subsection{Implementacija in uporaba zunanjih knjižnic}
-Naša metoda je implementirana v programskem jeziku Python in je dostopna na povezavi \cite{pokorn2026trajectory}. V implementaciji se često zanašamo na operacije z redkimi matrikami za doseganje višje hitrosti in zato uprabljamo modul \texttt{scipy.sparse} knjižnice SciPy \cite{2020SciPy-NMeth}. Konkretno se poslužujemo metode SuperLU za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{superlu_ug99}. Za reševanje QP uporabljamo knjižnico OSQP \cite{osqp}. Implemetacijo naše metode sta omogočili še knjižnici NumPy \cite{harris2020array} in Matplotlib \cite{Hunter:2007}.
+Naša metoda je implementirana v programskem jeziku Python in je dostopna na povezavi \cite{pokorn2026trajectory}. V implementaciji se često zanašamo na operacije z redkimi matrikami za doseganje višje hitrosti in zato uporabljamo modul \texttt{scipy.sparse} knjižnice SciPy \cite{2020SciPy-NMeth}. Konkretno se poslužujemo metode SuperLU za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{superlu_ug99}. Za reševanje QP uporabljamo knjižnico OSQP \cite{osqp}. Implementacijo naše metode sta omogočili še knjižnici NumPy \cite{harris2020array} in Matplotlib \cite{Hunter:2007}.
 
 \paragraph{Primer uporabe}
 Tukaj prikažemo preprost primer uporabe naše metode v programskem jeziku Python. Spodaj je prikazana koda, kjer definiramo problem z $11$ vmesnimi točkami in skupnim časom trajektorije $T=10$. Nato uporabimo metodo, ki implementira algoritem~\ref{alg:newton}. V vrstici \texttt{solver = ...} določimo stopnjo polinoma, kateri odvod želimo optimizirati, stopnjo gladkosti trajektorije (v kodi parameter \texttt{q} predstavlja stopnjo gladkosti $K$) in dimenzionalnost prostora, v katerem se nahajajo točke.
@@ -1142,7 +1142,7 @@ Vizualizacija dobljene trajektorije je prikazana na sliki~\ref{fig:iterations_vi
 \subsection{Konvergenca}
 \label{sec:convergence}
 
-V tem podpoglavju predstavimo rezultate ekseperimentov, s katerimi primerjamo konvergenco sledečih metod:
+V tem podpoglavju predstavimo rezultate eksperimentov, s katerimi primerjamo konvergenco sledečih metod:
 \begin{enumerate}
     \item Newtonova metoda, ki uporablja analitično izračunani gradient in Hessejevo matriko, kot je opisano v algoritmu~\ref{alg:newton}.
     \item Metoda gradientnega spusta, ki uporablja samo analitično izračunani gradient, ki ga projiciramo na hiperravnino $\mathbf{1}^\top \mathbf{t} = T$.
@@ -1163,7 +1163,7 @@ Začetna točka $\tvec_0$ je v vseh primerih izbrana na sledeči način:
 \end{equation},
 torej čas segmenta je proporcionalen glede na evklidsko razdaljo med končnima točkama segmenta. Skupen čas trajektorije $T$ je nastavljen na $n$.
 
- Rezultati so prikazani na slikah~\ref{fig:convergence_random} in~\ref{fig:convergence_random_and_line}. Na grafih je na $x$-osi število iteracij optimizacije, na $y$-osi pa povprečna izboljšava vrednosti cenovne funkcije $F(\tvec_i)$ glede na začetno vrednost $F(\tvec_0)$, izračunana s formulo $y_i = 1 - \frac{F(\tvec_i)}{F(\tvec_0)}$. Vsi rezultati pokažejo, da v vseh primerih Newtonova metoda konvergira v manj iteracijah kot metoda, ki uporablja samo gradient, in metoda TC, kar potrjuje učinkovitost naše metode. Poleg tega lahko opazimo, da se hitrost konvergence zmanjšuje z večjim številom segmentov trajektorije in Newtonova metoda večinoma  izgubi prednost pred gradientnim spustom. Analitični in numerični TC sta večinoma slabša od ostalih dveh metod, čeprav analitčni TC skonvergira k malo boljši rešitvi kot gradientni spust. V vseh primerih pa tudi velja, da Newtonova metoda konvergira k boljši rešitvi kot gradientni spust, vendar pa je ta razlika v končni vrednosti cenovne funkcije zelo majhna in v praksi ne bi bila opazna. Opazimo lahko, da pri prvem naboru naključnih primerov analitični TC konvergira k rešitvi bistveno hitreje kot numerični TC, kar je verjetno pokazatelj nenatančnosti numerične ocene odvodov, ki jih numerični TC uporablja. Pri drugem naboru pa se izkaže, da je numerični TC v začetnih iteracijah boljši kot analitični TC, kar bi lahko bila posledica tega, da $F$ pri vrednostih $\tvec$ v začetnih iteracijah z večjo verjetnostjo ni konveksna; v vseh primerih namreč analitični TC skonvergira k boljši rešitvi kot numerični TC.
+ Rezultati so prikazani na slikah~\ref{fig:convergence_random} in~\ref{fig:convergence_random_and_line}. Na grafih je na $x$-osi število iteracij optimizacije, na $y$-osi pa povprečna izboljšava vrednosti cenovne funkcije $F(\tvec_i)$ glede na začetno vrednost $F(\tvec_0)$, izračunana s formulo $y_i = 1 - \frac{F(\tvec_i)}{F(\tvec_0)}$. Vsi rezultati pokažejo, da v vseh primerih Newtonova metoda konvergira v manj iteracijah kot metoda, ki uporablja samo gradient, in metoda TC, kar potrjuje učinkovitost naše metode. Poleg tega lahko opazimo, da se hitrost konvergence zmanjšuje z večjim številom segmentov trajektorije in Newtonova metoda večinoma  izgubi prednost pred gradientnim spustom. Analitični in numerični TC sta večinoma slabša od ostalih dveh metod, čeprav analitični TC skonvergira k malo boljši rešitvi kot gradientni spust. V vseh primerih pa tudi velja, da Newtonova metoda konvergira k boljši rešitvi kot gradientni spust, vendar pa je ta razlika v končni vrednosti cenovne funkcije zelo majhna in v praksi ne bi bila opazna. Opazimo lahko, da pri prvem naboru naključnih primerov analitični TC konvergira k rešitvi bistveno hitreje kot numerični TC, kar je verjetno pokazatelj nenatančnosti numerične ocene odvodov, ki jih numerični TC uporablja. Pri drugem naboru pa se izkaže, da je numerični TC v začetnih iteracijah boljši kot analitični TC, kar bi lahko bila posledica tega, da $F$ pri vrednostih $\tvec$ v začetnih iteracijah z večjo verjetnostjo ni konveksna; v vseh primerih namreč analitični TC skonvergira k boljši rešitvi kot numerični TC.
 
 
 
@@ -1184,7 +1184,7 @@ torej čas segmenta je proporcionalen glede na evklidsko razdaljo med končnima 
 \subsection{Pasovna struktura Hessejeve matrike}
 \label{sec:bands_analysis}
 
-V podopoglavju~\ref{sec:hess_band} smo namignili, da ima Hessejeva matrika strukturo, kjer so neničelni elementi skoncentrirani na diagonali in nekaj pasovih okoli nje, kar pomeni, da nam elementov matrike izven teh pasov ni treba izračunati, a še vedno dobimo dober približek Hessejeve matrike. Na sliki \ref{fig:hess_bands_comparison} je prikazana primerjava polne Hessejeve matrike in aproksimacij z različnim številom pasov okoli diagonale.
+V podpoglavju~\ref{sec:hess_band} smo namignili, da ima Hessejeva matrika strukturo, kjer so neničelni elementi skoncentrirani na diagonali in nekaj pasovih okoli nje, kar pomeni, da nam elementov matrike izven teh pasov ni treba izračunati, a še vedno dobimo dober približek Hessejeve matrike. Na sliki \ref{fig:hess_bands_comparison} je prikazana primerjava polne Hessejeve matrike in aproksimacij z različnim številom pasov okoli diagonale.
 
 \begin{figure}
     \centering
@@ -1219,7 +1219,7 @@ V podopoglavju~\ref{sec:hess_band} smo namignili, da ima Hessejeva matrika struk
     \label{fig:hess_bands_comparison}
 \end{figure}
 
-V tem podpoglavju podrobneje analiziramo vpliv števila izračunanih pasov Hessejeve matrike na konvergenco optimizacijskega algoritma. Pri tem opazujemo tako povprečen čas izračuna kot tudi število iteracij, potrebnih za konvergenco algoritma. Analizo izvedemo na naključnih primerih z 20, 30 in 40 vmesnimi točkami, zanima pa nas, kako se spreminjata konvegenca in čas izračuna glede na število pasov Hessejeve matrike, ki jih izračunamo. Rezultati so prikazani na slikah~\ref{fig:bands_20},~\ref{fig:bands_30} in~\ref{fig:bands_40}. Na levem grafu lahko tako kot v prejšnjem podpoglavju vidimo povprečno izboljšavo cenovne funkcije glede na iteracijo. Na srednjem grafu lahko vidimo celoten povprečen čas v sekundah, ki ga algoritem potrebuje do konvergence, na desnem grafu pa povprečen čas, ki ga potrebuje, da izvede eno iteracijo. Vidimo lahko, da je v vseh testiranih primerih optimalno število pasov okoli 4 ali 5, kar nam omogoča pohitritev algoritma brez večje izgube v hitrosti konvergence. Pri primerih s 30 in 40 segmenti se vidi, da je v primeru 1 pasu čas na iteracijo krajši kot v primeru s 4 ali 5 pasovi, a je število iteracij, potrebnih za konvergenco, večje zaradi slabega približka Hessejeve matrike, kar vodi do večjega skupnega časa izračuna. V primeru z 2 pasovoma pa je v vseh primerih tako povprečen čas do konvergence kot povprečen čas na iteracijo bistveno višji od vseh ostalih.
+V tem podpoglavju podrobneje analiziramo vpliv števila izračunanih pasov Hessejeve matrike na konvergenco optimizacijskega algoritma. Pri tem opazujemo tako povprečen čas izračuna kot tudi število iteracij, potrebnih za konvergenco algoritma. Analizo izvedemo na naključnih primerih z 20, 30 in 40 vmesnimi točkami, zanima pa nas, kako se spreminjata konvergenca in čas izračuna glede na število pasov Hessejeve matrike, ki jih izračunamo. Rezultati so prikazani na slikah~\ref{fig:bands_20},~\ref{fig:bands_30} in~\ref{fig:bands_40}. Na levem grafu lahko tako kot v prejšnjem podpoglavju vidimo povprečno izboljšavo cenovne funkcije glede na iteracijo. Na srednjem grafu lahko vidimo celoten povprečen čas v sekundah, ki ga algoritem potrebuje do konvergence, na desnem grafu pa povprečen čas, ki ga potrebuje, da izvede eno iteracijo. Vidimo lahko, da je v vseh testiranih primerih optimalno število pasov okoli 4 ali 5, kar nam omogoča pohitritev algoritma brez večje izgube v hitrosti konvergence. Pri primerih s 30 in 40 segmenti se vidi, da je v primeru 1 pasu čas na iteracijo krajši kot v primeru s 4 ali 5 pasovi, a je število iteracij, potrebnih za konvergenco, večje zaradi slabega približka Hessejeve matrike, kar vodi do večjega skupnega časa izračuna. V primeru z 2 pasovoma pa je v vseh primerih tako povprečen čas do konvergence kot povprečen čas na iteracijo bistveno višji od vseh ostalih.
 
 \begin{figure}
     \centering
@@ -1244,7 +1244,7 @@ V tem podpoglavju podrobneje analiziramo vpliv števila izračunanih pasov Hesse
 
 \subsection{Hitrost metode v realnem času}
 
-Poleg števila iteracij je za uporabnost metode pomembna tudi učinkovitost v realnem času. Čeprav je Newtonova metoda hitrejša od gradientnega spusta v smislu števila iteracij, je vsaka iteracija računsko zahtevnejša zaradi izračuna Hessejeve matrike. Sliki~\ref{fig:convergence_time_random} in~\ref{fig:convergence_time_random_and_line} prikazujeta konvergenco v odvisnosti od porabljenega časa (angl. \textit{wall clock time}) za naključno generirane primere, ki smo jih opisali v podpoglavju~\ref{sec:convergence}. Tukaj smo za Newtonovo metodo in Analitični TC pognali algoritem, kjer smo izračunali 5 pasov ob diagonali, da smo zmanjšali računsko zahtevnost. Kljub temu je na grafih razvidno, da v realnem času v obeh primerih Newtonova metoda po večini ni hitrejša od metode z gradientnim spustom. Na grafih, ki prikazujejo primere z 20 vmesnimi točkami ali več, ni prikazana numerična TC metoda, saj je v teh primerih njena konvergenca v realnem času tako počasna, da je pristala izven okvira grafov. Namreč, numerična TC metoda mora na vsakem koraku izvesti evalvacujo cenovne funkcije $(n+1)$-krat, kjer je $n$ število segmentov trajektorije. V našem primeru to pomeni, da mora numerična TC metoda pri vsaki iteraciji rešiti $n+1$ \ac{QP} problemov, da lahko numerično izračuna odvode cenovne funkcije.
+Poleg števila iteracij je za uporabnost metode pomembna tudi učinkovitost v realnem času. Čeprav je Newtonova metoda hitrejša od gradientnega spusta v smislu števila iteracij, je vsaka iteracija računsko zahtevnejša zaradi izračuna Hessejeve matrike. Sliki~\ref{fig:convergence_time_random} in~\ref{fig:convergence_time_random_and_line} prikazujeta konvergenco v odvisnosti od porabljenega časa (angl. \textit{wall clock time}) za naključno generirane primere, ki smo jih opisali v podpoglavju~\ref{sec:convergence}. Tukaj smo za Newtonovo metodo in Analitični TC pognali algoritem, kjer smo izračunali 5 pasov ob diagonali, da smo zmanjšali računsko zahtevnost. Kljub temu je na grafih razvidno, da v realnem času v obeh primerih Newtonova metoda po večini ni hitrejša od metode z gradientnim spustom. Na grafih, ki prikazujejo primere z 20 vmesnimi točkami ali več, ni prikazana numerična TC metoda, saj je v teh primerih njena konvergenca v realnem času tako počasna, da je pristala izven okvira grafov. Namreč, numerična TC metoda mora na vsakem koraku izvesti evalvacijo cenovne funkcije $(n+1)$-krat, kjer je $n$ število segmentov trajektorije. V našem primeru to pomeni, da mora numerična TC metoda pri vsaki iteraciji rešiti $n+1$ \ac{QP} problemov, da lahko numerično izračuna odvode cenovne funkcije.
 
 Pričakovano se čas izračuna povečuje z večjim številom segmentov trajektorije in v primeru s 40 segmenti presega 2 sekundi, kar je za optimizacijo trajektorij v realnem času preveč. Kljub temu pa ne opazimo bistveno povečane relativne razlike med gradientnim spustom in Newtonovo metodo. Prav tako je dobljeni rezultat na 40 točkah primerljiv z rezultati, ki jih navajajo v \cite{sun2021fast}, kjer je določen delež njihove kode napisan v programskem jeziku C++, kar omogoča hitrejši izračun. Tu priznavamo, da v \cite{sun2021fast} dodatno uporabljajo neenakostne omejitve za izogibanje omejitvam.
 
@@ -1273,7 +1273,7 @@ Pričakovano se čas izračuna povečuje z večjim številom segmentov trajektor
 
 V tem magistrskem delu smo predstavili Newtonovo metodo za optimizacijo trajektorij za diferencialno ploščate sisteme. Pokazali smo, kako minimizacijo funkcionala z omejitvami pretvorimo v dvonivojski optimizacijski problem, kjer ima nižjenivojski problem strukturo \ac{QP} z enakostnimi omejitvami. S pomočjo \ac{IFT} smo pokazali, da lahko analitično izračunamo gradient in Hessejevo matriko cenovne funkcije zgornjenivojskega problema. Z eksperimenti smo pokazali, da Newtonova metoda potrebuje manj iteracij za konvergenco kot metoda, ki uporablja samo gradient ali metoda, ki odvode izračuna numerično. Kljub temu v večini primerov Newtonova metoda v realnem času ni hitrejša od gradientnega spusta. Opisali smo tudi nekaj pristopov za pohitritev algoritma, ki izrabljajo strukturo problema.
 
-Ostaja mnogo poti za izboljšavo. Glavna izmed njih je vključitev neenakostnih omejitev v \ac{QP}, kar bi omogočilo načrtovanje trajektorij z izogibanjem preprekam in omejitev maksimalnih hitrosti in pospeškov kvadrotorjev. To bi sicer lahko pripeljalo do težav pri veljavnosti \ac{IFT}, vendar v \cite{sun2021fast, amos2017optnet} že ponudijo rešitve. Dodatno bi bilo zanimivo raziskati vključitev nelinearnih omejitev, npr. omejitev stožca drugega reda, ki bi bile koristne za omejitve hitrosti in pospeška; za to bi bilo treba uporabiti algoritme za semidiefinitno programiranje, kot je npr. Clarabel \cite{goulart2024clarabel} oz. CuClarabel \cite{chen2024cuclarabel}, ki deluje z grafičnimi procesnimi enotami. Nadalje, implementacija v nižjenivojskem jeziku, kot je C++, bi z veliko verjetnostjo bistveno izboljšala hitrost. Normalizacija časovnih intervalov, kot je predlagana v \cite{mellinger2011minimum}, bi pripomogla k večji stabilnosti metode. Uporaba metode ničelnega prostora za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{rees2014null} bi lahko pripomogla k dodatni pohitritvi. Na strani implementacije bi bilo koristno dodati tudi nastavljive parametre za npr. začetne/končne odvode trajektorije. Še en zanimiv pristop k boljši hitrosti bi bil razvoj metode globokega učenja za aproksimacijo gradienta in Hessejeve matrike oz. optimizacijskega koraka; v preteklosti se je tak pristop izkazal za zelo učinkovit pri pospeševanju optimizacijskih algoritmov \cite{andrychowicz2016learning}. Na koncu bi bilo zanimivo raziskati, ali se podobna metoda lahko uporabi tudi v problemih na drugih področjih.
+Ostaja mnogo poti za izboljšavo. Glavna izmed njih je vključitev neenakostnih omejitev v \ac{QP}, kar bi omogočilo načrtovanje trajektorij z izogibanjem preprekam in omejitev maksimalnih hitrosti in pospeškov kvadrotorjev. To bi sicer lahko pripeljalo do težav pri veljavnosti \ac{IFT}, vendar v \cite{sun2021fast, amos2017optnet} že ponudijo rešitve. Dodatno bi bilo zanimivo raziskati vključitev nelinearnih omejitev, npr. omejitev stožca drugega reda, ki bi bile koristne za omejitve hitrosti in pospeška; za to bi bilo treba uporabiti algoritme za semidefinitno programiranje, kot je npr. Clarabel \cite{goulart2024clarabel} oz. CuClarabel \cite{chen2024cuclarabel}, ki deluje z grafičnimi procesnimi enotami. Nadalje, implementacija v nižjenivojskem jeziku, kot je C++, bi z veliko verjetnostjo bistveno izboljšala hitrost. Normalizacija časovnih intervalov, kot je predlagana v \cite{mellinger2011minimum}, bi pripomogla k večji stabilnosti metode. Uporaba metode ničelnega prostora za faktorizacijo matrike v enačbi~\eqref{eq:kkt_matrix} \cite{rees2014null} bi lahko pripomogla k dodatni pohitritvi. Na strani implementacije bi bilo koristno dodati tudi nastavljive parametre za npr. začetne/končne odvode trajektorije. Še en zanimiv pristop k boljši hitrosti bi bil razvoj metode globokega učenja za aproksimacijo gradienta in Hessejeve matrike oz. optimizacijskega koraka; v preteklosti se je tak pristop izkazal za zelo učinkovit pri pospeševanju optimizacijskih algoritmov \cite{andrychowicz2016learning}. Na koncu bi bilo zanimivo raziskati, ali se podobna metoda lahko uporabi tudi v problemih na drugih področjih.
 
 
 %\subsection{Sklicevanje in citiranje}
@@ -1505,7 +1505,7 @@ Sedaj lahko sestavimo parcialni odvod celotne KKT matrike $\kmat$:
 \end{bmatrix},
 \end{equation}
 
-s tem pa izračunamo tudi parcialne odvode implicitne funkcije $\yimplicit_x$ (vektor polinomskih koeficientov in Lagrangeovih multiplikatorjev za dimenzijo $x$) glede na $t_1$:
+s tem pa izračunamo tudi parcialne odvode implicitne funkcije $\yimplicit_x$ (vektor polinomskih koeficientov in Lagrangeevih multiplikatorjev za dimenzijo $x$) glede na $t_1$:
 
 \begin{equation}
 \partial_{t_1} \yimplicit_x(\tvec) = -\kmat(\tvec)^{-1} (\partial_{t_1} \kmat(\tvec) \yimplicit_x(\tvec)).
@@ -1610,7 +1610,7 @@ Kot vhodne podatke algoritma~\ref{alg:gradhess} imamo matriko $\qmat(\tvec)$, ma
 \footnotetext[1]{Striktno gledano imata bloka $\partial_{t_n} A_n$ in $\partial_{t_n t_n} A_n$ eno vrstico manj od ostalih blokov ($K+1$ vrstic, saj imamo pri ostalih blokih dodatno omejitev, ki določa skladanje končne koordinate z začetno v naslednjem segmentu), vendar pa smo v implementaciji dodali dodatno ničelno vrstico, da so vsi bloki enake velikosti in da lahko uporabimo vektorske operacije brez skrbi o različnih velikostih blokov.}
 
 \subsection{Izračun gradienta}
-\label{sec:grad}
+\label{app:grad}
 
 Sedaj lahko z tenzorsko notacijo zapišemo sledečo matriko:
 

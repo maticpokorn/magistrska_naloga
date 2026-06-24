@@ -62,7 +62,7 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Newtonova metoda za dvonivojsko optimizacijo trajektorij diferencialno ploščatih sistemov z analitičnimi odvodi</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Newtonova metoda z analitičnimi odvodi za dvonivojsko optimizacijo trajektorij diferencialno ploščatih sistemov</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Matic Pokorn</rdf:li></rdf:Seq></dc:creator>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Magistrsko delo, Računalništvo in matematika, 90C53, 90C30, 90C20, 49M37, 49M15, 90C31</rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>dvonivojska optimizacija</rdf:li>
@@ -80,15 +80,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2026-06-24T08:11:02+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2026-06-24T08:11:02+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2026-06-24T08:11:02+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2026-06-24T09:47:48+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2026-06-24T09:47:48+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2026-06-24T09:47:48+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:49B2795F-42BC-BB9B-F932-F5D663316194</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:A051E3E7-A3DD-5C9D-673F-9995B6978B35</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:DD56177C-6104-1D60-D858-990D1F02089E</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

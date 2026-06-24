@@ -1,8 +1,8 @@
-PWD c:/Users/matic/Faks/MAG/2025_magistrska
+PWD C:/Users/matic/Faks/MAG/2025_magistrska
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/matic/Faks/MAG/2025_magistrska/Pokorn-27232059-2026.tex
+INPUT Pokorn-27232059-2026.tex
 OUTPUT Pokorn-27232059-2026.log
 INPUT ./fmfdelo.cls
 INPUT fmfdelo.cls
