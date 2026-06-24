@@ -48,7 +48,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{International conference on machine learning}
-      \field{title}{Optnet: Differentiable optimization as a layer in neural networks}
+      \field{title}{{OptNet}: Differentiable optimization as a layer in neural networks}
       \field{year}{2017}
       \field{pages}{136\bibrangedash 145}
       \range{pages}{10}
@@ -94,7 +94,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in neural information processing systems}
-      \field{title}{Differentiable mpc for end-to-end planning and control}
+      \field{title}{Differentiable {MPC} for end-to-end planning and control}
       \field{volume}{31}
       \field{year}{2018}
     \endentry
@@ -158,16 +158,19 @@
       \field{volume}{29}
       \field{year}{2016}
     \endentry
-    \entry{bertsekas1997nonlinear}{article}{}{}
+    \entry{bertsekas2016nonlinear}{book}{}{}
       \name{author}{1}{}{%
         {{hash=9d82cb170e490607a367aba73aa5668c}{%
            family={Bertsekas},
            familyi={B\bibinitperiod},
-           given={Dimitri\bibnamedelima P},
+           given={Dimitri\bibnamedelima P.},
            giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
+      \list{location}{1}{%
+        {Belmont, Massachusetts}%
+      }
       \list{publisher}{1}{%
-        {Taylor \& Francis}%
+        {Athena Scientific}%
       }
       \strng{namehash}{9d82cb170e490607a367aba73aa5668c}
       \strng{fullhash}{9d82cb170e490607a367aba73aa5668c}
@@ -181,13 +184,10 @@
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the Operational Research Society}
-      \field{number}{3}
-      \field{title}{Nonlinear programming}
-      \field{volume}{48}
-      \field{year}{1997}
-      \field{pages}{334\bibrangedash 334}
-      \range{pages}{1}
+      \field{edition}{3rd}
+      \field{isbn}{978-1-886529-05-2}
+      \field{title}{Nonlinear Programming}
+      \field{year}{2016}
     \endentry
     \entry{boyd2004convex}{book}{}{}
       \name{author}{2}{}{%
@@ -289,6 +289,52 @@
       \verb https://vnav.mit.edu/material/10-TrajectoryOptimization2-notes.pdf
       \endverb
     \endentry
+    \entry{chapelle2002choosing}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c16923b3cb0e0256feb096973e25b782}{%
+           family={Chapelle},
+           familyi={C\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=c2b3e05872463585b4be6aab10d10d63}{%
+           family={Vapnik},
+           familyi={V\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=cf4fea95321213e7dc3532fd33b85112}{%
+           family={Bousquet},
+           familyi={B\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=49a355d0c2a2e9b223f90f3e0088cb29}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Sayan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c732d475e25778afe902723c9f093dab}
+      \strng{fullhash}{aa4b212749625955750dbc99b1cf0563}
+      \strng{fullhashraw}{aa4b212749625955750dbc99b1cf0563}
+      \strng{bibnamehash}{c732d475e25778afe902723c9f093dab}
+      \strng{authorbibnamehash}{c732d475e25778afe902723c9f093dab}
+      \strng{authornamehash}{c732d475e25778afe902723c9f093dab}
+      \strng{authorfullhash}{aa4b212749625955750dbc99b1cf0563}
+      \strng{authorfullhashraw}{aa4b212749625955750dbc99b1cf0563}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Machine learning}
+      \field{number}{1}
+      \field{title}{Choosing multiple parameters for support vector machines}
+      \field{volume}{46}
+      \field{year}{2002}
+      \field{pages}{131\bibrangedash 159}
+      \range{pages}{29}
+    \endentry
     \entry{chen2024cuclarabel}{article}{}{}
       \name{author}{5}{}{%
         {{hash=faf979dcde1c93768f5866cb785d6acb}{%
@@ -330,7 +376,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2412.19027}
-      \field{title}{CuClarabel: GPU acceleration for a conic optimization solver}
+      \field{title}{{CuClarabel}: {GPU} acceleration for a conic optimization solver}
       \field{year}{2024}
     \endentry
     \entry{conn2000trust}{book}{}{}
@@ -851,13 +897,48 @@
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{SIAM review}
+      \field{journaltitle}{{SIAM} Review}
       \field{number}{3}
       \field{title}{Tensor decompositions and applications}
       \field{volume}{51}
       \field{year}{2009}
       \field{pages}{455\bibrangedash 500}
       \range{pages}{46}
+    \endentry
+    \entry{krantz2002implicit}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=4219fdd521cdc0d8324b96d7942de586}{%
+           family={Krantz},
+           familyi={K\bibinitperiod},
+           given={Steven\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d61ef5d5833ad2041b16ce1539769f57}{%
+           family={Parks},
+           familyi={P\bibinitperiod},
+           given={Harold\bibnamedelima R.},
+           giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser}%
+      }
+      \strng{namehash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{fullhash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{fullhashraw}{6315522e68a479b45d12faa096e9b0af}
+      \strng{bibnamehash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{authorbibnamehash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{authornamehash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{authorfullhash}{6315522e68a479b45d12faa096e9b0af}
+      \strng{authorfullhashraw}{6315522e68a479b45d12faa096e9b0af}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-8176-4285-3}
+      \field{title}{The Implicit Function Theorem: History, Theory, and Applications}
+      \field{year}{2002}
     \endentry
     \entry{EPFL_Part5}{misc}{}{}
       \name{author}{1}{}{%
@@ -880,7 +961,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Lecture Notes, EPFL}
-      \field{note}{Accessed: 2026-02-03}
       \field{title}{Advanced Numerical Analysis, Part 5: {Q}uadratic Programming}
       \field{year}{2018}
       \verb{urlraw}
@@ -889,35 +969,6 @@
       \verb{url}
       \verb https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part5-1.pdf
       \endverb
-    \endentry
-    \entry{lee2003smooth}{incollection}{}{}
-      \name{author}{1}{}{%
-        {{hash=36896354ee3aedc1a13d683ea773634e}{%
-           family={Lee},
-           familyi={L\bibinitperiod},
-           given={John\bibnamedelima M},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{fullhash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{fullhashraw}{36896354ee3aedc1a13d683ea773634e}
-      \strng{bibnamehash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{authorbibnamehash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{authornamehash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{authorfullhash}{36896354ee3aedc1a13d683ea773634e}
-      \strng{authorfullhashraw}{36896354ee3aedc1a13d683ea773634e}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Introduction to smooth manifolds}
-      \field{title}{Smooth manifolds}
-      \field{year}{2003}
-      \field{pages}{1\bibrangedash 29}
-      \range{pages}{29}
     \endentry
     \entry{lee2010geometric}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -953,10 +1004,70 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{49th IEEE conference on decision and control (CDC)}
-      \field{title}{Geometric tracking control of a quadrotor UAV on SE (3)}
+      \field{title}{Geometric tracking control of a quadrotor {UAV} on {SE}(3)}
       \field{year}{2010}
       \field{pages}{5420\bibrangedash 5425}
       \range{pages}{6}
+    \endentry
+    \entry{superlu_ug99}{report}{}{}
+      \name{author}{6}{}{%
+        {{hash=5220f10ec6e54a702fcddc5b6cfbf3fe}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={X.\bibnamedelimi S.},
+           giveni={X\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f6d4ba0108aacad5123ed9d37da735a2}{%
+           family={Demmel},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=e4d6f377acab94f52db8045db7a976e4}{%
+           family={Gilbert},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=97b99bb053cb235d0abc9c53709953ce}{%
+           family={Grigori},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c15cebe5e47252d16a44d66b0287ce8f}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0c048bdaad611ff1f77b22a2cf345e87}{%
+           family={Yamazaki},
+           familyi={Y\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Lawrence Berkeley National Laboratory}%
+      }
+      \strng{namehash}{80842c90669d830fe13bc82006aa5f83}
+      \strng{fullhash}{7104ae11f1688bd9c7ee25032406166e}
+      \strng{fullhashraw}{7104ae11f1688bd9c7ee25032406166e}
+      \strng{bibnamehash}{80842c90669d830fe13bc82006aa5f83}
+      \strng{authorbibnamehash}{80842c90669d830fe13bc82006aa5f83}
+      \strng{authornamehash}{80842c90669d830fe13bc82006aa5f83}
+      \strng{authorfullhash}{7104ae11f1688bd9c7ee25032406166e}
+      \strng{authorfullhashraw}{7104ae11f1688bd9c7ee25032406166e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last update: June 2018}
+      \field{number}{LBNL-44289}
+      \field{title}{{SuperLU} Users' Guide}
+      \field{type}{techreport}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb https://portal.nersc.gov/project/sparse/superlu/superlu_ug.pdf
+      \endverb
+      \verb{url}
+      \verb https://portal.nersc.gov/project/sparse/superlu/superlu_ug.pdf
+      \endverb
     \endentry
     \entry{liu2017planning}{article}{}{}
       \name{author}{7}{}{%
@@ -1093,39 +1204,6 @@
       \field{pages}{349\bibrangedash 357}
       \range{pages}{9}
     \endentry
-    \entry{newton1736method}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=c2827ae14feae073cd692358c06f386d}{%
-           family={Newton},
-           familyi={N\bibinitperiod},
-           given={I.},
-           giveni={I\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {Henry Woodfall;}%
-        {sold by John Nourse}%
-      }
-      \strng{namehash}{c2827ae14feae073cd692358c06f386d}
-      \strng{fullhash}{c2827ae14feae073cd692358c06f386d}
-      \strng{fullhashraw}{c2827ae14feae073cd692358c06f386d}
-      \strng{bibnamehash}{c2827ae14feae073cd692358c06f386d}
-      \strng{authorbibnamehash}{c2827ae14feae073cd692358c06f386d}
-      \strng{authornamehash}{c2827ae14feae073cd692358c06f386d}
-      \strng{authorfullhash}{c2827ae14feae073cd692358c06f386d}
-      \strng{authorfullhashraw}{c2827ae14feae073cd692358c06f386d}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The Method of Fluxions and Infinite Series: With Its Application to the Geometry of Curve-lines. By ... Sir Isaac Newton, ... Translated from the Author's Latin Original Not Yet Made Publick. To which is Subjoin'd, a Perpetual Comment Upon the Whole Work, ... By John Colson, ...}
-      \field{year}{1736}
-      \verb{urlraw}
-      \verb https://books.google.si/books?id=WyQOAAAAQAAJ
-      \endverb
-      \verb{url}
-      \verb https://books.google.si/books?id=WyQOAAAAQAAJ
-      \endverb
-    \endentry
     \entry{nocedal2006numerical}{book}{}{}
       \name{author}{2}{}{%
         {{hash=88a342d927bf795b0d92af8a5613da31}{%
@@ -1156,6 +1234,30 @@
       \field{labeltitlesource}{title}
       \field{title}{Numerical optimization}
       \field{year}{2006}
+    \endentry
+    \entry{pokorn2026trajectory}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9df274d06179d70fc1c35cceae5bb9d0}{%
+           family={Pokorn},
+           familyi={P\bibinitperiod},
+           given={Matic},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{fullhash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{fullhashraw}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{bibnamehash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{authorbibnamehash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{authornamehash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{authorfullhash}{9df274d06179d70fc1c35cceae5bb9d0}
+      \strng{authorfullhashraw}{9df274d06179d70fc1c35cceae5bb9d0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/maticpokorn/trajectory_optimization}}
+      \field{title}{trajectory\_optimization}
+      \field{year}{2026}
     \endentry
     \entry{rees2014null}{article}{}{}
       \name{author}{2}{}{%
@@ -1251,30 +1353,6 @@
       \field{year}{1901}
       \field{pages}{224\bibrangedash 243}
       \range{pages}{20}
-    \endentry
-    \entry{stackelberg1934marktform}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=2d377fe8f457408addd31d49e1cba6f1}{%
-           family={Stackelberg},
-           familyi={S\bibinitperiod},
-           given={Heinrich\bibnamedelima von},
-           giveni={H\bibinitperiod\bibinitdelim v\bibinitperiod}}}%
-      }
-      \strng{namehash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{fullhash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{fullhashraw}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{bibnamehash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{authorbibnamehash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{authornamehash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{authorfullhash}{2d377fe8f457408addd31d49e1cba6f1}
-      \strng{authorfullhashraw}{2d377fe8f457408addd31d49e1cba6f1}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{(No Title)}
-      \field{title}{Marktform und gleichgewicht}
-      \field{year}{1934}
     \endentry
     \entry{osqp}{article}{}{}
       \name{author}{5}{}{%
@@ -1378,7 +1456,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Robotics}
       \field{number}{6}
-      \field{title}{A comparative study of nonlinear mpc and differential-flatness-based control for quadrotor agile flight}
+      \field{title}{A comparative study of nonlinear {MPC} and differential-flatness-based control for quadrotor agile flight}
       \field{volume}{38}
       \field{year}{2022}
       \field{pages}{3357\bibrangedash 3373}
@@ -1419,34 +1497,11 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Robotics}
       \field{number}{6}
-      \field{title}{Fast UAV trajectory optimization using bilevel optimization with analytical gradients}
+      \field{title}{Fast {UAV} trajectory optimization using bilevel optimization with analytical gradients}
       \field{volume}{37}
       \field{year}{2021}
       \field{pages}{2010\bibrangedash 2024}
       \range{pages}{15}
-    \endentry
-    \entry{superlu1997superlu}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=fa3dabd1fd4af1b15a74f1cc7a1ef42e}{%
-           family={SuperLU},
-           familyi={S\bibinitperiod},
-           given={I\bibnamedelima Sequential},
-           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \strng{namehash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{fullhash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{fullhashraw}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{bibnamehash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{authorbibnamehash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{authornamehash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{authorfullhash}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \strng{authorfullhashraw}{fa3dabd1fd4af1b15a74f1cc7a1ef42e}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{SuperLU Users' Guide}
-      \field{year}{1997}
     \endentry
     \entry{tordesillas2021faster}{article}{}{}
       \name{author}{4}{}{%
@@ -1488,7 +1543,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Robotics}
       \field{number}{2}
-      \field{title}{Faster: Fast and safe trajectory planner for navigation in unknown environments}
+      \field{title}{{FASTER}: Fast and safe trajectory planner for navigation in unknown environments}
       \field{volume}{38}
       \field{year}{2021}
       \field{pages}{922\bibrangedash 938}
@@ -1692,6 +1747,32 @@
       \verb 10.1038/s41592-019-0686-2
       \endverb
     \endentry
+    \entry{von2010market}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=aff5c48fd11d1ac40fe12f67b95caf57}{%
+           family={Von\bibnamedelima Stackelberg},
+           familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{fullhash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{fullhashraw}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{bibnamehash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{authorbibnamehash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{authornamehash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{authorfullhash}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \strng{authorfullhashraw}{aff5c48fd11d1ac40fe12f67b95caf57}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Market structure and equilibrium}
+      \field{year}{2010}
+    \endentry
     \entry{wachter2006implementation}{article}{}{}
       \name{author}{2}{}{%
         {{hash=dc724f071bd0fcc1e9eabf5f96209481}{%
@@ -1818,7 +1899,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Robotics and Automation Letters}
       \field{number}{2}
-      \field{title}{Ego-planner: An esdf-free gradient-based local planner for quadrotors}
+      \field{title}{Ego-planner: An {ESDF}-free gradient-based local planner for quadrotors}
       \field{volume}{6}
       \field{year}{2020}
       \field{pages}{478\bibrangedash 485}
@@ -1870,7 +1951,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Drones}
       \field{number}{3}
-      \field{title}{A Survey on the Key Technologies of UAV Motion Planning}
+      \field{title}{A Survey on the Key Technologies of {UAV} Motion Planning}
       \field{volume}{9}
       \field{year}{2025}
       \field{pages}{194}

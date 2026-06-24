@@ -1,27 +1,27 @@
 # Fdb version 4
-["biber Pokorn-27232059-2026"] 1777917434.17761 "Pokorn-27232059-2026.bcf" "Pokorn-27232059-2026.bbl" "Pokorn-27232059-2026" 1777917573.49906 0
-  "Pokorn-27232059-2026.bcf" 1777917571 114045 97620e8232d919a2ce15db0c0db8f22b "pdflatex"
-  "literatura.bib" 1777733174 15847 d07ea207033780dd0230db4f7a457210 ""
+["biber Pokorn-27232059-2026"] 1782281417.15658 "Pokorn-27232059-2026.bcf" "Pokorn-27232059-2026.bbl" "Pokorn-27232059-2026" 1782281477.29623 0
+  "Pokorn-27232059-2026.bcf" 1782281476 114330 50ca55d3025c656177e32d5512fcc28a "pdflatex"
+  "literatura.bib" 1782281404 15906 63b3eed413dc89cbf13cf0e531123e26 ""
   (generated)
   "Pokorn-27232059-2026.bbl"
   "Pokorn-27232059-2026.blg"
   (rewritten before read)
-["makeindex Pokorn-27232059-2026.idx"] 1777917345.68204 "Pokorn-27232059-2026.idx" "Pokorn-27232059-2026.ind" "Pokorn-27232059-2026" 1777917573.49776 0
-  "Pokorn-27232059-2026.idx" 1777917548 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex Pokorn-27232059-2026.idx"] 1782247803.31418 "Pokorn-27232059-2026.idx" "Pokorn-27232059-2026.ind" "Pokorn-27232059-2026" 1782281477.2957 0
+  "Pokorn-27232059-2026.idx" 1782281463 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Pokorn-27232059-2026.ilg"
   "Pokorn-27232059-2026.ind"
   (rewritten before read)
-["pdflatex"] 1777917544.94617 "c:/Users/matic/Faks/MAG/2025_magistrska/Pokorn-27232059-2026.tex" "Pokorn-27232059-2026.pdf" "Pokorn-27232059-2026" 1777917573.50053 0
-  "Pokorn-27232059-2026.aux" 1777917571 77812 9f0060afb5c9e05803ee92fc47244c60 "pdflatex"
-  "Pokorn-27232059-2026.bbl" 1777917470 79593 384cefb9a79602debeb5ebfe4ec0007e "biber Pokorn-27232059-2026"
-  "Pokorn-27232059-2026.ind" 1777917392 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Pokorn-27232059-2026.idx"
-  "Pokorn-27232059-2026.out" 1777917571 4710 eb5195bee4f26d37a96b29a7c5c33782 "pdflatex"
-  "Pokorn-27232059-2026.run.xml" 1777917571 2417 7e5b3d3cdeea5f117544d4a84a695ef7 "pdflatex"
-  "Pokorn-27232059-2026.tex" 1777917522 120553 08e42436f952a8c5d301ffe61ce4efd3 ""
-  "Pokorn-27232059-2026.toc" 1777917571 3901 d819419ebdcaf8cec28564f5f8a0c735 "pdflatex"
-  "Pokorn-27232059-2026.xmpdata" 1777917551 370 f3b50c4ff10afc5e715d0ca698d72f9a "pdflatex"
-  "c:/Users/matic/Faks/MAG/2025_magistrska/Pokorn-27232059-2026.tex" 1777917522 120553 08e42436f952a8c5d301ffe61ce4efd3 ""
+["pdflatex"] 1782281461.20158 "c:/Users/matic/Faks/MAG/2025_magistrska/Pokorn-27232059-2026.tex" "Pokorn-27232059-2026.pdf" "Pokorn-27232059-2026" 1782281477.29706 0
+  "Pokorn-27232059-2026.aux" 1782281476 79131 ae16006b24a139600f7076eca3e72402 "pdflatex"
+  "Pokorn-27232059-2026.bbl" 1782281423 82646 20b2e121ef690b439eda8b02e5bf9650 "biber Pokorn-27232059-2026"
+  "Pokorn-27232059-2026.ind" 1782247809 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Pokorn-27232059-2026.idx"
+  "Pokorn-27232059-2026.out" 1782281476 4724 22525119e58fdab4cf24b84d629c5db6 "pdflatex"
+  "Pokorn-27232059-2026.run.xml" 1782281476 2417 7e5b3d3cdeea5f117544d4a84a695ef7 "pdflatex"
+  "Pokorn-27232059-2026.tex" 1782281456 127703 a0f38b00e187e563d80417082a03b272 ""
+  "Pokorn-27232059-2026.toc" 1782281476 3908 72009270848f2b4fa2975bad1accd962 "pdflatex"
+  "Pokorn-27232059-2026.xmpdata" 1782281464 361 c37c5cc768f3e857423e5803c636c071 "pdflatex"
+  "c:/Users/matic/Faks/MAG/2025_magistrska/Pokorn-27232059-2026.tex" 1782281456 127703 a0f38b00e187e563d80417082a03b272 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1740129085 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1740129085 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1740129085 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -392,7 +392,7 @@
   "images/trajectory_2d_bo.pdf" 1774425166 102416 204df371156b252c9ca60e9d07ede425 ""
   "images/trajectory_2d_qp.pdf" 1774424920 102387 907fc4a150880764dd82ddb68296caee ""
   "images/trajectory_3d_velocity.pdf" 1777708689 309166 846ced93b21f0891fa4ca97676ef4840 ""
-  "pdfa.xmpi" 1777917552 5729 e7dff61c79eaca440376974b8e05b25c "pdflatex"
+  "pdfa.xmpi" 1782281465 5720 468685c86df73b6e58448d6579de7277 "pdflatex"
   "tikz/convergence_analysis_random.tex" 1777716841 6153 507b1f1084b3ed5c561e31124ad38571 ""
   "tikz/convergence_analysis_random_and_line.tex" 1777716841 6354 9303f9f9936121df1f929330b71235cd ""
   "tikz/convergence_time_analysis_random.tex" 1777715281 6171 d89a60d252c74ead63b020c511bdc168 ""
@@ -409,8 +409,5 @@
   "Pokorn-27232059-2026.xmpdata"
   "pdfa.xmpi"
   (rewritten before read)
-  "Pokorn-27232059-2026.out"
-  "Pokorn-27232059-2026.run.xml"
-  "Pokorn-27232059-2026.toc"
   "Pokorn-27232059-2026.xmpdata"
   "pdfa.xmpi"
